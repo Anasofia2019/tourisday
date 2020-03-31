@@ -23,6 +23,7 @@ if (isset($_SESSION['guia'])) {
 
   <body>
 <h1>Hola wey</h1>
+<h1>Golear</h1>
    <header>
     <nav class="navbar navbar-default">
      <div class="container-fluid">
