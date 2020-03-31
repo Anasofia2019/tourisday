@@ -209,7 +209,7 @@ if (isset($_SESSION['guia'])) {
 
 
                  <div class="btn__form">
-                <input class="btn__submit" name="actualizar_guia" type="submit" value="Actializar" id="boton1">
+                <input class="btn__submit" name="actualizar_guia" type="submit" value="Actualizar" id="boton1">
                    <input class="btn__reset" type="reset" value="Limpiar" id="boton1">
                  </div>
          </form>

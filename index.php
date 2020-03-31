@@ -22,7 +22,7 @@ if (isset($_SESSION['guia'])) {
    </head>
 
   <body>
-<h1>Hola git</h1>
+<h1>Hola wey</h1>
    <header>
     <nav class="navbar navbar-default">
      <div class="container-fluid">
