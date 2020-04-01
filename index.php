@@ -21,8 +21,8 @@ if (isset($_SESSION['guia'])) {
     <link rel="shortcut- icon" type="image/x-icon" href="./img/mapa.svg">
    </head>
 
-  <body>
-    
+  <body style="background:#a0c8f7;">
+
    <header>
     <nav class="navbar navbar-default">
      <div class="container-fluid">

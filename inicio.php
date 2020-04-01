@@ -21,7 +21,7 @@ if (isset($_SESSION['guia'])) {
 
 </style>
 </head>
-<body class="body3">
+<body class="body3" style="background:#a0c8f7;">
 <a href="index.php" ><img src="img/mapa.svg" alt="" id="logo_inicio"></a>
 <div class="contenedor_titulo_inicio">
   <h3>TOURISTDAY</h3>

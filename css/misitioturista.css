@@ -168,6 +168,7 @@ ul.tabs  li a .tab-text{
 }
 .secciones #tab4  #cambiar_info2{
 margin-top: 100px;
+
 }
 .secciones #tab4 {
   height: 570px;
@@ -209,6 +210,9 @@ margin-top: 100px;
   height: 500px;
   margin-top: 20px;
   margin-left: 25%;
+  border-top: 10px solid var(--verde);
+  border-bottom: 10px solid var(--verde);
+
 }
 .secciones #tab4 #cambiar_info2 input,select{
 

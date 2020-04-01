@@ -19,7 +19,7 @@ if (isset($_SESSION['guia'])) {
   <title>Formulario</title>
 </head>
 
-<body class="body3">
+<body class="body3" style="background:#a0c8f7;">
   <a href="index.php" ><img src="img/mapa.svg" alt="" id="logoRegistroGuia"></a>
   <div class="contenedor_titulo_r_turista">
     <h3>TOURIST DAY</h3>
