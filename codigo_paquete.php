@@ -12,23 +12,6 @@ if (isset($_POST['btn_paquete'])) {
   echo "<script>alert('Paquete subido de forma exitosa');</script>";
   echo "<script>window.location='misitioguia.php'</script>";
 
-}elseif (isset($_POST['btn_reservar'])) {
-	$id_paquete=$_POST['btn_reservar'];
-	$docu_tu=$_POST['doc_t'];
-
-	$consulta_v=mysqli_query($conexion,"SELECT * FROM tbl_historial_adquirido WHERE id_paquetes='$id_paquete'") or die ("error");
-	$cont=mysqli_num_rows($consulta_v);
-	echo $cont;
-	if ($cont==0) {
-		
-	$insert= mysqli_query($conexion,"INSERT INTO tbl_historial_adquirido(id_compra,id_paquetes,doc_turista,fecha_compra) VALUES (NULL,$id_paquete,$docu_tu,NULL)") or die ("<script>alert('Error al Reservar'); window.location='misitioturista.php'</script>");
-	echo "<script>alert('Paquete reservado de forma exitosa');</script>";
-	echo "<script>window.location='misitioturista.php'</script>";
-	}
-	else{
-		echo "<script>alert('El paquete fue reservado con anterioridad');</script>";
-		echo "<script>window.location='misitioturista.php'</script>";
-	}
 }elseif (isset($_POST['btn_comentario'])) {
 		$cedula_tt=$_POST['ced_t'];
 		$puntos=$_POST['puntuacion_p'];

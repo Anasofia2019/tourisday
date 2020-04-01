@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-03-2020 a las 04:02:15
+-- Tiempo de generación: 01-04-2020 a las 05:15:02
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -32,15 +32,16 @@ CREATE TABLE `tbl_comentarios` (
   `id_comentario` int(4) NOT NULL,
   `comentario_turista` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
   `puntuacion` int(1) DEFAULT NULL,
-  `id` int(4) NOT NULL
+  `id_tu` int(15) NOT NULL,
+  `id_paq` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `tbl_comentarios`
 --
 
-INSERT INTO `tbl_comentarios` (`id_comentario`, `comentario_turista`, `puntuacion`, `id`) VALUES
-(1, 'muy bueno', 23, 1);
+INSERT INTO `tbl_comentarios` (`id_comentario`, `comentario_turista`, `puntuacion`, `id_tu`, `id_paq`) VALUES
+(3, 'me gusta', 3, 2, 9);
 
 -- --------------------------------------------------------
 
@@ -103,10 +104,19 @@ INSERT INTO `tbl_guias` (`cedula`, `nombre_guia_1`, `nombre_guia_2`, `apellido_g
 
 CREATE TABLE `tbl_historial_adquirido` (
   `id_compra` int(11) NOT NULL,
-  `id_paquete` int(4) NOT NULL,
-  `documento_turista` int(15) NOT NULL,
-  `fecha_compra` date NOT NULL
+  `id_paquetes` int(4) NOT NULL,
+  `doc_turista` int(15) NOT NULL,
+  `fecha_compra` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_historial_adquirido`
+--
+
+INSERT INTO `tbl_historial_adquirido` (`id_compra`, `id_paquetes`, `doc_turista`, `fecha_compra`) VALUES
+(12, 9, 2, '2020-03-31 23:13:29'),
+(13, 6, 2111111113, '2020-04-01 03:08:58'),
+(14, 1, 2111111113, '2020-04-01 03:10:49');
 
 -- --------------------------------------------------------
 
@@ -129,13 +139,11 @@ CREATE TABLE `tbl_paquetes` (
 --
 
 INSERT INTO `tbl_paquetes` (`id_paquete`, `cedula`, `titulo`, `descripcion`, `url_image`, `estado`, `orden`) VALUES
-(1, 0, 'Pueblito paisa', 'https://obedalvarado.pw/blog/sistema-inventario-simple-php/', '394f1feec2fbfd520cf5692860aca851.jpg', 1, 1),
-(2, 0, 'Parque de los deseos', 'http://obedalvarado.pw/simple-invoice/', '8dc33298102e0e7f613602bf9fa94c76.jpg', 1, 2),
-(17, 33299922, 'Sabaneta', 'Sabanta', '58ba6682d684e0f2b361c995294107c6.jpg', 1, 3),
-(110, 333342344, 'Sabaneta', 'Hola', '0a3e49515afed06a80c9f3851ac18b72.jpg', 1, 25),
-(117, 333311111, 'Cultural', 'Hola a todos', '1f53d9bcde8efbce721ec06c6d1f09e7.jpg', 1, 27),
-(126, 0, '', '', 'demo.png', 0, 0),
-(127, 0, '', '', 'demo.png', 0, 0);
+(1, 333342344, 'Pueblito paisa', 'Comidas', 'IMG_1671-1024X640.JPG', 1, 1),
+(6, 333342344, 'Venecia', 'Paisaje hermoso', 'venecia.jpg\r\n', 1, 6),
+(9, 54654, 'Jardin botanico', 'Salida de caminata por la naturaleza', '416950.jpeg', 1, 2),
+(12, 21321, 'parque de las aguas', 'Ir a piscina a joder la vida', 'aguas.jpg', 1, 2),
+(123, 13546, 'Enciso', 'Comer salchipapas', 'descarga.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -184,7 +192,8 @@ INSERT INTO `tbl_turistas` (`documento_turista`, `nombre_turista_1`, `nombre_tur
 -- Indices de la tabla `tbl_comentarios`
 --
 ALTER TABLE `tbl_comentarios`
-  ADD KEY `id` (`id`);
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `id` (`id_paq`);
 
 --
 -- Indices de la tabla `tbl_fotos_paquetes`
@@ -203,7 +212,7 @@ ALTER TABLE `tbl_guias`
 --
 ALTER TABLE `tbl_historial_adquirido`
   ADD PRIMARY KEY (`id_compra`),
-  ADD KEY `documento_turista` (`documento_turista`);
+  ADD KEY `documento_turista` (`doc_turista`);
 
 --
 -- Indices de la tabla `tbl_paquetes`
@@ -223,16 +232,22 @@ ALTER TABLE `tbl_turistas`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `tbl_comentarios`
+--
+ALTER TABLE `tbl_comentarios`
+  MODIFY `id_comentario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `tbl_historial_adquirido`
 --
 ALTER TABLE `tbl_historial_adquirido`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_paquetes`
 --
 ALTER TABLE `tbl_paquetes`
-  MODIFY `id_paquete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `id_paquete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

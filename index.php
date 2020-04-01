@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 if (isset($_SESSION['guia'])) {
   echo "<script>window.location='misitioguia.php';</script>";
@@ -22,7 +22,6 @@ if (isset($_SESSION['guia'])) {
    </head>
 
   <body>
-
    <header>
     <nav class="navbar navbar-default">
      <div class="container-fluid">

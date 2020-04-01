@@ -5,8 +5,8 @@ $title="Agregar Banner";
 include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
-$insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo')");
-$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc ");
+$insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
+$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc  limit 0,1 ");
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
 $sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
@@ -122,11 +122,12 @@ $active_banner="active";
 
 		 <form class="form-vertical">
 
-			<div class="form-group">
-
+		 <div class="form-group">
+				
 				<div class="col-sm-12">
-
-				<div class="fileinput fileinput-new" data-provides="fileinput">
+				
+				 
+				 <div class="fileinput fileinput-new" data-provides="fileinput">
 								  <div class="fileinput-new thumbnail" style="max-width: 100%;" >
 									  <img class="img-rounded" src="../img/banner/<?php echo $url_image;?>" />
 								  </div>
@@ -138,8 +139,11 @@ $active_banner="active";
 								  </div>
 					</div>
 					<div class="upload-msg"></div>
-
+					
 				</div>
+				
+			  </div>
+			  
 
 			  </div>
 
@@ -163,7 +167,7 @@ $active_banner="active";
 
   </body>
 </html>
-	<script>
+<script>
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
@@ -172,7 +176,7 @@ $active_banner="active";
 				var data = new FormData();
 				data.append('fileToUpload',file);
 				data.append('id',id_banner);
-
+				
 				$.ajax({
 					url: "ajax/upload_banner.php",        // Url to which the request is send
 					type: "POST",             // Type of request to be send, called as method
@@ -189,9 +193,9 @@ $active_banner="active";
 						});	}, 5000);
 					}
 				});
-
+				
 			}
-
+			
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
@@ -202,20 +206,20 @@ $active_banner="active";
 						  },
 							success:function(data){
 								$(".upload-msg2").html(data);
-
+								
 							}
 						})
-
+					
 				}
-
-
-
-
-
+				
+				
+				
+				
+			
 	</script>
 	<script>
 		$("#editar_banner").submit(function(e) {
-
+			
 			  $.ajax({
 				  url: "ajax/editar_banner.php",
 				  type: "POST",
@@ -231,3 +235,6 @@ $active_banner="active";
 			 e.preventDefault();
 		});
 	</script>
+
+	
+

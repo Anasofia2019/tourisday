@@ -6,13 +6,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["titulo"])){
 	include ("../conexion.php");
 	// escaping, additionally removing everything that could be (html/javascript-) code
      $titulo = mysqli_real_escape_string($conexion,(strip_tags($_POST['titulo'], ENT_QUOTES)));
-		 $cedula = intval($conexion,($_POST['cedula']));
 	 $descripcion = mysqli_real_escape_string($conexion,($_POST['descripcion']));
 	 $orden = intval($_POST['orden']);
 	 $estado = intval($_POST['estado']);
 	 $id_banner=intval($_POST['id_banner']);
 
-	 $sql="tbl_paquetes  SET titulo='$titulo',cedula ='$cedula', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE id_paquete='$id_banner'";
+	 $sql="tbl_paquetes  SET titulo='$titulo', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE id_paquete='$id_banner'";
 	 $query = mysqli_query($conexion,$sql);
 	// if user has been added successfully
 	if ($query) {

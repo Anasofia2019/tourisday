@@ -7,7 +7,7 @@ if($action == 'ajax'){
 	//Elimino producto
 	if (isset($_REQUEST['id'])){
 		$id_banner=intval($_REQUEST['id']);
-		if ($delete=mysqli_query($conexion,"delete from tbl_paquetes where id='$id_banner'")){
+		if ($delete=mysqli_query($conexion,"delete from tbl_paquetes where id_paquete='$id_banner'")){
 			$message= "Datos eliminados satisfactoriamente";
 		} else {
 			$error= "No se pudo eliminar los datos";

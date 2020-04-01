@@ -1,5 +1,8 @@
 ﻿<?php
 include("conexion.php");
+session_start();
+if (isset($_SESSION['turista'])) {
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +25,7 @@ include("conexion.php");
 				<h1 class="page-header">Paquetes</h1>
 			<?php
 
-				$sql_banner_top=mysqli_query($conexion,"select * from tbl_paquetes  order by orden ");
+				$sql_banner_top=mysqli_query($conexion,"select * from tbl_paquetes");
 				while($rw_banner_top=mysqli_fetch_array($sql_banner_top)){
 					?>
 
@@ -30,15 +33,44 @@ include("conexion.php");
 						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="<?php echo $rw_banner_top['titulo'];?>" data-caption="<?php echo $rw_banner_top['descripcion'];	?>" data-image="img/banner/<?php echo $rw_banner_top['url_image'];?>" data-target="#image-gallery">
 							<img class="img-responsive" src="img/banner/<?php echo $rw_banner_top['url_image'];?>" alt="Another alt text">
 						</a>
+						 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+						 	<input type="hidden" name="reserva" value="<?php echo $rw_banner_top['id_paquete'];  ?>">
+						 	<input type="hidden" name="doc_t" value="<?php echo $_SESSION['turista'];  ?>">
+
+                			<button name="btn_reservar">añadir a favoritos</button>
+               			 </form>
+                <br><br><br>
 					</div>
 					<?php
 
 
 				}
+				if (isset($_POST['btn_reservar'])) {
+	$id_paquete=$_POST['reserva'];
+	$docu_tu=$_POST['doc_t'];
+
+	echo $id_paquete;
+	echo $docu_tu;
+
+	$consulta_v=mysqli_query($conexion,"SELECT * FROM tbl_historial_adquirido WHERE id_paquetes='$id_paquete'") or die ("error");
+	$cont=mysqli_num_rows($consulta_v);
+	echo $cont;
+	if ($cont==0) {
+		
+	$insert= mysqli_query($conexion,"INSERT INTO tbl_historial_adquirido(id_paquetes,doc_turista) VALUES ($id_paquete,$docu_tu)") or die ("<script>alert('Error al Reservar');</script>");
+	echo "<script>alert('Paquete reservado de forma exitosa');</script>";
+	// echo "<script>window.location='misitioturista.php'</script>";
+	}
+	else{
+		echo "<script>alert('El paquete fue reservado con anterioridad');</script>";
+		// echo "<script>window.location='misitioturista.php'</script>";
+	}
+}
 			?>
 
 			</div>
 		</div>
+
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -64,6 +96,10 @@ include("conexion.php");
                 <div class="col-md-2">
                     <button type="button" id="show-next-image" class="btn btn-info">Siguiente</button>
                 </div>
+
+
+
+               
             </div>
         </div>
     </div>
@@ -199,3 +235,11 @@ include("conexion.php");
 			 e.preventDefault();
 		});
 	</script>
+
+<?php
+
+} else {
+	echo "<script>alert('no puedes entrar a esta pagina');</script>";
+}
+
+?>

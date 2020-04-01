@@ -136,7 +136,7 @@ if (isset($_SESSION['guia'])) {
       <br>
 			<article id="tab3">
 
-<iframe name=miframeflotante src="añadirpaquete.php" width=990 height=550 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 style="margin-left:-25%;" ></iframe>
+<iframe name=miframeflotante src="anadirpaquete.php" width=990 height=550 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 style="margin-left:-25%;" ></iframe>
       </article>
 
 			<article id="tab4">
@@ -209,7 +209,7 @@ if (isset($_SESSION['guia'])) {
 
 
                  <div class="btn__form">
-                <input class="btn__submit" name="actualizar_guia" type="submit" value="Actualizar" id="boton1">
+                <input class="btn__submit" name="actualizar_guia" type="submit" value="Actializar" id="boton1">
                    <input class="btn__reset" type="reset" value="Limpiar" id="boton1">
                  </div>
          </form>

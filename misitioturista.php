@@ -156,7 +156,7 @@ $datos=mysqli_fetch_array($consulta);
 
 
 
-   <iframe src="mostrarpaquete.php" height="600" width="1189" id="mostar_paquetes" style="background:blue;"></iframe>
+   <iframe src="mostrarpaquete.php" height="600" width="1189" id="mostar_paquetes" style="background:blue;" border></iframe>
 
 
         </center>
@@ -164,47 +164,96 @@ $datos=mysqli_fetch_array($consulta);
 			<article id="tab3">
 				<h1> Mis sitios favoritos</h1><br><br><br>
 
+<?php 
+
+$consulta_f=mysqli_query($conexion,"SELECT id_paquete,cedula,titulo,descripcion,url_image,id_paquetes,doc_turista FROM tbl_paquetes INNER JOIN tbl_historial_adquirido WHERE doc_turista='$cedula' AND id_paquete=id_paquetes") or die ('error en la consulta');
+$num_rows=mysqli_num_rows($consulta_f);
+if ($num_rows>0) {
 
 
+$i=1;
+?>
+    
+<?php
+while ($fetch=mysqli_fetch_array($consulta_f)) {
+
+  if ($i % 3==0 or $i==1) {
+    ?>
 <div class="w3-row-padding w3-theme">
+    <?php
+  }
+  ?>
 
 <div class="w3-third w3-section">
 <div class="w3-card-4">
-<img src="img/paisaje1.jpg" style="width:100%">
+<img src="img/banner/<?php echo $fetch['url_image'] ?>" style="width:100%">
 <div class="w3-container w3-white">
-<h4>Cinque Terre</h4>
-<p>The Cinque Terre (five lands) is a portion of the Italian Riviera. The coastline with five villages: Monterosso, Vernazza, Corniglia, Manarola, and Riomaggiore
-is a UNESCO World Heritage Site.</p>
+<h4><?php echo $fetch['titulo']; ?></h4>
+<p><?php echo $fetch['descripcion']; ?></p>
+<center>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?php echo $fetch['id_paquete']; ?>">
+  Añadir comentario
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="<?php echo $fetch['id_paquete']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><?php echo $fetch['titulo']; ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="codigo_paquete.php">
+          <div class="modal-body">
+            <input type="hidden" name="ced_t" value="<?php echo $cedula; ?>">
+            <input type="hidden" name="id_paqu" value="<?php echo $fetch['id_paquete']; ?>">
+
+           Comentario <input type="text" name="<?php echo $fetch['id_paquete']; ?>"><br><br>
+            Puntuacion<select name="puntuacion_p">
+              <option selected disabled>Seleccionar</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary" value="<?php echo $fetch['id_paquete']; ?>" name="btn_comentario">Enviar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+</center>
 </div>
 </div>
 </div>
 
-<div class="w3-third w3-section">
-<div class="w3-card-4">
-<img src="img/paisaje2.png" style="width:100%">
-<div class="w3-container w3-white">
-<h4>Monterosso</h4>
-<p>Monterosso al Mare is located at the center of a small natural gulf, protected by a small artificial reef,
-in the Riviera of La Spezia. It is the northernmost village of the Cinque Terre.</p>
-</div>
-</div>
-</div>
 
-<div class="w3-third w3-section">
-<div class="w3-card-4">
-<img src="img/paisaje3.jpg" style="width:100%">
-<div class="w3-container w3-white">
-<h4>Vernazza</h4>
-<p>Vernazza is another of the five towns in the region. Vernazza is the fourth town heading north. It has no car traffic, and is one of the truest
-"fishing villages" on the Italian Riviera.
-</div>
-</div>
-<br><br><br>
-</div>
-</div>
-<div class="w3-container w3-theme-d4">
-<p class="w3-large">Medellín colombia</p>
-</div>
+
+
+
+  <?php
+  if ($i % 3==0) {
+    ?>
+    </div>
+    <?php
+  }
+  $i=$i+$i;
+}?>
+
+<?php
+} else{
+  echo "<b><center>No tienes paquetes favoritos</b></center>";
+}
+?>
+
+
 
 
 			</article>

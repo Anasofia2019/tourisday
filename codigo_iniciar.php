@@ -16,7 +16,7 @@ if (isset($_POST['iniciar_s'])) {
         $usuario_g= mysqli_fetch_array($consulta_g);
         $_SESSION['guia']= $usuario_g['cedula'];
 
-        echo "<script>alert('iniciando seccion');</script>";
+        echo "<script>alert('Iniciando sesión');</script>";
         echo "<script>window.location='misitioguia.php';</script>";
 
         } else {
@@ -32,7 +32,7 @@ if (isset($_POST['iniciar_s'])) {
             $usuario_t=mysqli_fetch_array($consulta_t);
             $_SESSION['turista']= $usuario_t['documento_turista'];
 
-            echo "<script>alert('iniciando seccion');</script>";
+            echo "<script>alert('Iniciando sesión');</script>";
             echo "<script>window.location='misitioturista.php';</script>";
           }else {
             echo "<script>alert('Usuario o contraseña incorrecto');</script>";
