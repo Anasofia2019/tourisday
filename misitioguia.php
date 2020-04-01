@@ -69,6 +69,7 @@ if (isset($_SESSION['guia'])) {
       </article>
       <br>
 			<article id="tab2">
+        <img src="img/paket.svg" alt="" height="200px">
 				<h2 id="titulo_paquete">Mis paquetes</h2>
 
         <?php
@@ -140,7 +141,7 @@ if (isset($_SESSION['guia'])) {
       </article>
 
 			<article id="tab4">
-
+        <img src="img/candado.svg" alt="" id="imagen_cambiar">
 
         <div class="contenedor_registro" id="cambiar_info">
         <div class="caja_registro" style="">

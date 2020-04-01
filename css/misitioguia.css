@@ -191,11 +191,11 @@ ul.tabs  li a .tab-text{
 #tab1 #titulo_tab1{
   height: 150px;
  text-align:justify;
- margin-left: 8%;
+ margin-left: 5%;
  top:50px;
- font-weight: 550;
+
  font-family: verdana;
- color : black;
+ color :#275A89;
 }
 
 .secciones article{
@@ -251,7 +251,7 @@ position: absolute;
 margin-left: 30%;
 }
 .secciones #tab2 h2{
-  color:black;
+  color:#275A89;
   font-size: 50px;
   font-family:verdana;
 }
@@ -273,12 +273,20 @@ color: black;
 }
 form #tarea{
   width: 300px;
+  margin-left: 30px;
 }
 
 .secciones #tab4 h1{
   text-align: center;
   position: absolute;
   margin-left: 30%;
+}
+.secciones #tab4 #imagen_cambiar{
+height: 200px;
+width: 300px;
+position: absolute;
+margin-left: 20%;
+margin-top:-35px;
 }
 .secciones #tab4  #cambiar_info{
   margin-left: 25%;
