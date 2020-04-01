@@ -44,7 +44,7 @@ $active_banner="active";
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
 	<link href="css/preview-image.css" rel="stylesheet">
   </head>
-  <body style="  background: linear-gradient(to bottom, #ffff99 0%, #ffffff 100%);">
+  <body>
 
 
     <div class="container">

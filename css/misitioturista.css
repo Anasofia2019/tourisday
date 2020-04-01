@@ -151,16 +151,20 @@ ul.tabs  li a .tab-text{
 	text-align: justify;
 }
 .secciones #tab1{
-  background: linear-gradient(to bottom, #ffffff 27%, #ffff66 101%);
+  background: #f9f194;
 }
 .secciones #tab2{
-  background: linear-gradient(to bottom, #ffffff 27%, #ffff66 101%);
+  background: #f9f194;
+
 }
 .secciones #tab3{
-  background: linear-gradient(to bottom, #ffffff 27%, #ffff66 101%);
+  background: #f9f194;
+
 }
 .secciones #tab4{
-  background: linear-gradient(to bottom, #ffffff 27%, #ffff66 101%);
+  background: #f9f194;
+
+
 }
 .secciones #tab4  #cambiar_info2{
 margin-top: 100px;
@@ -168,8 +172,38 @@ margin-top: 100px;
 .secciones #tab4 {
   height: 570px;
 }
-.secciones #tab4 #cambiar_info2{
+.secciones #tab4 #boton_cambio{
+  background: var(--amarillo);
+  border-top:solid var(--amarillo);
+  border-left:solid var(--amarillo);
+  padding: 5px;
+  border-radius: 10px;
+
+}
+
+.secciones #tab4 #boton_cambio2{
+  background: var(--amarillo);
+  border-top:solid var(--amarillo);
+  border-left:solid var(--amarillo);
+  padding: 5px;
+  border-radius: 10px;
+
+}
+.secciones #tab4 #boton_cambio:hover{
+  transition: 1s;
   background: var(--verde);
+  border-top:solid var(--verde);
+  border-left:solid var(--verde);
+}
+
+.secciones #tab4 #boton_cambio2:hover{
+  transition: 1s;
+  background: var(--verde);
+  border-top:solid var(--verde);
+  border-left:solid var(--verde);
+}
+.secciones #tab4 #cambiar_info2{
+  background: #489cd3 ;
   padding: 30px;
   width: 500px;
   height: 500px;
@@ -177,6 +211,7 @@ margin-top: 100px;
   margin-left: 25%;
 }
 .secciones #tab4 #cambiar_info2 input,select{
+
   margin: 5px;
 }
 .secciones #tab1 h1{

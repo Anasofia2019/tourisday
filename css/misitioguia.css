@@ -152,7 +152,7 @@ ul.tabs  li a .tab-text{
   z-index: -1;
   position:absolute;
 	width: 130%;
-	background: linear-gradient(to bottom, #ffffff 35%, #00ccff 100%);
+	background: #f9f194;
   margin-top:100px;
   margin-left: -100px;
 
@@ -168,6 +168,7 @@ ul.tabs  li a .tab-text{
   display:inline;
 }
 .secciones #tab3{
+
   position: relative;
   margin-left: 20%;
 }
@@ -194,7 +195,7 @@ ul.tabs  li a .tab-text{
  top:50px;
  font-weight: 550;
  font-family: verdana;
- color : white;
+ color : black;
 }
 
 .secciones article{
@@ -284,11 +285,11 @@ form #tarea{
   width: 500px;
   padding: 40px;
   height: 500px;
-   background: linear-gradient(to bottom, #00ccff 0%, #ffffff 100%);
+   background:#489cd3;
 }
 .secciones #tab4  #cambiar_info #boton1{
 
-  background: var(--amarillo);
+  background:var(--amarillo) ;
   margin: 5px;
   margin-top: 35px;
   height: 35px;
@@ -296,7 +297,7 @@ form #tarea{
   padding: 5px;
 }
 .secciones #tab4  #cambiar_info #boton1:hover{
-  background: var(--azul);
+  background: var(--verde);
   transition: 1s;
 }
 .secciones #tab4  #cambiar_info .input{

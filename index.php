@@ -22,6 +22,7 @@ if (isset($_SESSION['guia'])) {
    </head>
 
   <body>
+    
    <header>
     <nav class="navbar navbar-default">
      <div class="container-fluid">

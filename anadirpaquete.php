@@ -44,7 +44,7 @@ $active_banner="active";
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
 	<link href="css/preview-image.css" rel="stylesheet">
   </head>
-  <body style="  background: linear-gradient(to bottom, #ffff99 0%, #ffffff 100%);">
+  <body style="  background:#489cd3">
 
 
     <div class="container">
@@ -123,10 +123,10 @@ $active_banner="active";
 		 <form class="form-vertical">
 
 		 <div class="form-group">
-				
+
 				<div class="col-sm-12">
-				
-				 
+
+
 				 <div class="fileinput fileinput-new" data-provides="fileinput">
 								  <div class="fileinput-new thumbnail" style="max-width: 100%;" >
 									  <img class="img-rounded" src="../img/banner/<?php echo $url_image;?>" />
@@ -139,11 +139,11 @@ $active_banner="active";
 								  </div>
 					</div>
 					<div class="upload-msg"></div>
-					
+
 				</div>
-				
+
 			  </div>
-			  
+
 
 			  </div>
 
@@ -176,7 +176,7 @@ $active_banner="active";
 				var data = new FormData();
 				data.append('fileToUpload',file);
 				data.append('id',id_banner);
-				
+
 				$.ajax({
 					url: "ajax/upload_banner.php",        // Url to which the request is send
 					type: "POST",             // Type of request to be send, called as method
@@ -193,9 +193,9 @@ $active_banner="active";
 						});	}, 5000);
 					}
 				});
-				
+
 			}
-			
+
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
@@ -206,20 +206,20 @@ $active_banner="active";
 						  },
 							success:function(data){
 								$(".upload-msg2").html(data);
-								
+
 							}
 						})
-					
+
 				}
-				
-				
-				
-				
-			
+
+
+
+
+
 	</script>
 	<script>
 		$("#editar_banner").submit(function(e) {
-			
+
 			  $.ajax({
 				  url: "ajax/editar_banner.php",
 				  type: "POST",
@@ -235,6 +235,3 @@ $active_banner="active";
 			 e.preventDefault();
 		});
 	</script>
-
-	
-

@@ -164,7 +164,7 @@ $datos=mysqli_fetch_array($consulta);
 			<article id="tab3">
 				<h1> Mis sitios favoritos</h1><br><br><br>
 
-<?php 
+<?php
 
 $consulta_f=mysqli_query($conexion,"SELECT id_paquete,cedula,titulo,descripcion,url_image,id_paquetes,doc_turista FROM tbl_paquetes INNER JOIN tbl_historial_adquirido WHERE doc_turista='$cedula' AND id_paquete=id_paquetes") or die ('error en la consulta');
 $num_rows=mysqli_num_rows($consulta_f);
@@ -173,7 +173,7 @@ if ($num_rows>0) {
 
 $i=1;
 ?>
-    
+
 <?php
 while ($fetch=mysqli_fetch_array($consulta_f)) {
 
@@ -329,12 +329,12 @@ while ($fetch=mysqli_fetch_array($consulta_f)) {
 
 
                  <div class="btn__form">
-                <input class="btn__submit" name="actualizar_turista" type="submit" value="Actualizar">
-                   <input class="btn__reset" type="reset" value="Limpiar">
+                <input class="btn__submit" name="actualizar_turista" type="submit" value="Actualizar" id="boton_cambio">
+                   <input class="btn__reset" type="reset" value="Limpiar" id="boton_cambio2">
                  </div>
          </form>
        </div>
-    
+
        	</article>
      </div>
     </div>
