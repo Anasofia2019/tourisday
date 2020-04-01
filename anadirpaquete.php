@@ -44,7 +44,7 @@ $active_banner="active";
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
 	<link href="css/preview-image.css" rel="stylesheet">
   </head>
-  <body style="background:background:#489cd3">
+  <body style="background:#489cd3">
 
 
     <div class="container">
