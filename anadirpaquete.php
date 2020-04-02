@@ -1,15 +1,15 @@
-﻿<?php
+<?php
 session_start();
-$title="Agregar Banner";
+$title="Agregar paquete";
 /* Llamar la Cadena de Conexion*/
 include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
-$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc  limit 0,1 ");
+$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquetes) as last from tbl_paquetes order by id_paquetes desc limit 0,1");
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
-$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
+$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquetes='$id_banner'");
 $count=mysqli_num_rows($sql);
 if ($count==0){
 	//header("location: bannerlist.php");
@@ -44,7 +44,7 @@ $active_banner="active";
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
 	<link href="css/preview-image.css" rel="stylesheet">
   </head>
-  <body style="background:#489cd3">
+  <body>
 
 
     <div class="container">
@@ -54,7 +54,7 @@ $active_banner="active";
 
 
 		 <div class="col-md-7">
-		 <h3 ><span class="glyphicon glyphicon-edit"  style="margin-top:-50px;"></span>Crear paquete</h3>
+		 <h3 ><span class="glyphicon glyphicon-edit"></span> Agregar paquete</h3>
 			<form class="form-horizontal" id="editar_banner">
 
 
@@ -67,13 +67,12 @@ $active_banner="active";
 				</div>
 			  </div>
         <div class="form-group">
-				<label for="titulo" class="col-sm-3 control-label">Cedula</label>
-				<div class="col-sm-9">
-				  <input type="text" class="form-control" id="cedula" value="<?php echo $cedula;?>" required name="cedula">
-				  <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
-				</div>
-			  </div>
-
+       <label for="titulo" class="col-sm-3 control-label">Cedula</label>
+       <div class="col-sm-9">
+         <input type="text" class="form-control" id="cedula" value="<?php echo $cedula;?>" required name="cedula">
+         <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
+       </div>
+       </div>
 			  <div class="form-group">
 				<label for="titulo" class="col-sm-3 control-label">Descripción</label>
 				<div class="col-sm-9">
@@ -109,7 +108,7 @@ $active_banner="active";
 			  <div id='loader'></div>
 			  <div class='outer_div'></div>
 				<div class="col-sm-offset-3 col-sm-9">
-				  <button type="submit" class="btn btn-success">crear</button>
+				  <button type="submit" class="btn btn-success">Actualizar datos</button>
 				</div>
 			  </div>
 			</form>
@@ -145,9 +144,6 @@ $active_banner="active";
 			  </div>
 
 
-			  </div>
-
-
 
 
 
@@ -167,7 +163,7 @@ $active_banner="active";
 
   </body>
 </html>
-<script>
+	<script>
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
@@ -217,7 +213,7 @@ $active_banner="active";
 
 
 	</script>
-	<script>
+  <script>
 		$("#editar_banner").submit(function(e) {
 
 			  $.ajax({

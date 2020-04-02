@@ -1,6 +1,6 @@
 ﻿<?php
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUpload"]["type"])){
-/* Llamar la Cadena de Conexion*/ 
+/* Llamar la Cadena de Conexion*/
 include ("../conexion.php");
 
 $id_banner=intval($_POST['id']);
@@ -48,8 +48,8 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
        $messages[]= "El Archivo ha sido subido correctamente.";
 	   $ruta=$_FILES["fileToUpload"]["name"];
-	 $update=mysqli_query($conexion,"UPDATE tbl_paquetes SET url_image='$ruta' WHERE id_paquete='$id_banner'");
-	   
+	 $update=mysqli_query($conexion,"UPDATE tbl_paquetes SET url_image='$ruta' WHERE id_paquetes='$id_banner'");
+
     } else {
        $errors[]= "Lo sentimos, hubo un error subiendo el archivo.";
     }
@@ -59,7 +59,7 @@ if (isset($errors)){
 	?>
 	<div class="alert alert-danger alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>Error!</strong> 
+	  <strong>Error!</strong>
 	  <?php
 	  foreach ($errors as $error){
 		  echo"<p>$error</p>";
@@ -73,7 +73,7 @@ if (isset($messages)){
 	?>
 	<div class="alert alert-success alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>Aviso!</strong> 
+	  <strong>Aviso!</strong>
 	  <?php
 	  foreach ($messages as $message){
 		  echo"<p>$message</p>";
@@ -83,4 +83,4 @@ if (isset($messages)){
 	<?php
 }
 }
-?> 
+?>

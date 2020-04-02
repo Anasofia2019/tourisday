@@ -1,20 +1,14 @@
 ﻿<?php
 session_start();
-$title="Agregar Banner";
+$title="Agregar paquete";
 /* Llamar la Cadena de Conexion*/
 include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
-$insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
-$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc ");
-$rw=mysqli_fetch_array($sql_last);
-$id_banner=intval($rw['last']);
-$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
+$id_banner=intval($_GET['id']);
+$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquetes='$id_banner'");
 $count=mysqli_num_rows($sql);
-if ($count==0){
-	//header("location: bannerlist.php");
-	//exit;
-}
+
 $rw=mysqli_fetch_array($sql);
 $titulo=$rw['titulo'];
 $cedula=$rw['cedula'];
@@ -55,101 +49,100 @@ $active_banner="active";
 
 		 <div class="col-md-7">
 		 <h3 ><span class="glyphicon glyphicon-edit"></span> Agregar paquete</h3>
-			<form class="form-horizontal" id="editar_banner">
+     <form class="form-horizontal" id="editar_banner">
 
 
 
-			  <div class="form-group">
-				<label for="titulo" class="col-sm-3 control-label">Titulo</label>
-				<div class="col-sm-9">
-				  <input type="text" class="form-control" id="titulo" value="<?php echo $titulo;?>" required name="titulo">
-				  <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
-				</div>
-			  </div>
-        <div class="form-group">
-				<label for="titulo" class="col-sm-3 control-label">Cedula</label>
-				<div class="col-sm-9">
-				  <input type="text" class="form-control" id="titulo" value="<?php echo $cedula;?>" required name="cedula">
-				  <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
-				</div>
-			  </div>
-
-			  <div class="form-group">
-				<label for="titulo" class="col-sm-3 control-label">Descripción</label>
-				<div class="col-sm-9">
-				  <textarea class='form-control' name="descripcion" id="descripcion" required rows=8><?php echo $descripcion;?></textarea>
-				</div>
-			  </div>
+       <div class="form-group">
+       <label for="titulo" class="col-sm-3 control-label">Titulo</label>
+       <div class="col-sm-9">
+         <input type="text" class="form-control" id="titulo" value="<?php echo $titulo;?>" required name="titulo">
+         <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
+       </div>
+       </div>
+       <div class="form-group">
+      <label for="titulo" class="col-sm-3 control-label">Cedula</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="cedula" value="<?php echo $cedula;?>" required name="cedula">
+        <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
+      </div>
+      </div>
 
 
+       <div class="form-group">
+       <label for="titulo" class="col-sm-3 control-label">Descripción</label>
+       <div class="col-sm-9">
+         <textarea class='form-control' name="descripcion" id="descripcion" required rows=8><?php echo $descripcion;?></textarea>
+       </div>
+       </div>
 
-			  <div class="form-group">
-				<label for="orden" class="col-sm-3 control-label">Orden</label>
-				<div class="col-sm-9">
-				  <input type="number" class="form-control" id="orden" name="orden" value="<?php echo $orden;?>">
-				</div>
-			  </div>
-
-
-			  <div class="form-group">
-				<label for="estado" class="col-sm-3 control-label">Estado</label>
-				<div class="col-sm-9">
-				  <select class="form-control" id="estado" required name="estado">
-					<option value="0" <?php if($estado==0){echo "selected";} ?>>Inactivo</option>
-					<option value="1" <?php if($estado==1){echo "selected";} ?>>Activo</option>
-				 </select>
-				</div>
-			  </div>
+       <div class="form-group">
+       <label for="orden" class="col-sm-3 control-label">Orden</label>
+       <div class="col-sm-9">
+         <input type="number" class="form-control" id="orden" name="orden" value="<?php echo $orden;?>">
+       </div>
+       </div>
 
 
-
-
-
-			  <div class="form-group">
-			  <div id='loader'></div>
-			  <div class='outer_div'></div>
-				<div class="col-sm-offset-3 col-sm-9">
-				  <button type="submit" class="btn btn-success">Actualizar datos</button>
-				</div>
-			  </div>
-			</form>
-
-
-
-		</div>
-		<div class="col-md-5">
-		 <h3 ><span class="glyphicon glyphicon-picture"></span> Imagen</h3>
-
-		 <form class="form-vertical">
-
-		 <div class="form-group">
-				
-				<div class="col-sm-12">
-				
-				 
-				 <div class="fileinput fileinput-new" data-provides="fileinput">
-								  <div class="fileinput-new thumbnail" style="max-width: 100%;" >
-									  <img class="img-rounded" src="../img/banner/<?php echo $url_image;?>" />
-								  </div>
-								  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 250px;"></div>
-								  <div>
-									<span class="btn btn-info btn-file"><span class="fileinput-new">Selecciona una imagen</span>
-									<span class="fileinput-exists" onclick="upload_image();">Cambiar imagen</span><input type="file" name="fileToUpload" id="fileToUpload" required onchange="upload_image();"></span>
-									<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Cancelar</a>
-								  </div>
-					</div>
-					<div class="upload-msg"></div>
-					
-				</div>
-
-			  </div>
+       <div class="form-group">
+       <label for="estado" class="col-sm-3 control-label">Estado</label>
+       <div class="col-sm-9">
+         <select class="form-control" id="estado" required name="estado">
+         <option value="0" <?php if($estado==0){echo "selected";} ?>>Inactivo</option>
+         <option value="1" <?php if($estado==1){echo "selected";} ?>>Activo</option>
+        </select>
+       </div>
+       </div>
 
 
 
 
 
+       <div class="form-group">
+       <div id='loader'></div>
+       <div class='outer_div'></div>
+       <div class="col-sm-offset-3 col-sm-9">
+         <button type="submit" class="btn btn-success">Actualizar datos</button>
+       </div>
+       </div>
+     </form>
 
-		 </form>
+
+
+   </div>
+   <div class="col-md-5">
+    <h3 ><span class="glyphicon glyphicon-picture"></span> Imagen</h3>
+
+    <form class="form-vertical">
+
+     <div class="form-group">
+
+       <div class="col-sm-12">
+
+
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+                 <div class="fileinput-new thumbnail" style="max-width: 100%;" >
+                   <img class="img-rounded" src="../img/banner/<?php echo $url_image;?>" />
+                 </div>
+                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 250px;"></div>
+                 <div>
+                 <span class="btn btn-info btn-file"><span class="fileinput-new">Selecciona una imagen</span>
+                 <span class="fileinput-exists" onclick="upload_image();">Cambiar imagen</span><input type="file" name="fileToUpload" id="fileToUpload" required onchange="upload_image();"></span>
+                 <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Cancelar</a>
+                 </div>
+         </div>
+         <div class="upload-msg"></div>
+
+       </div>
+
+       </div>
+
+
+
+
+
+
+    </form>
 		</div>
     </div>
 	</div><!-- /container -->
@@ -164,7 +157,7 @@ $active_banner="active";
 
   </body>
 </html>
-	<script>
+<script>
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();

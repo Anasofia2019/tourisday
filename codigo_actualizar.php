@@ -44,7 +44,7 @@ if (isset($_POST['actualizar_guia'])) {
     $row=mysqli_fetch_array($consulta);
     if ($row['contra_turista']==$p_t_1) {
       $cambio_g=mysqli_query($conexion,"UPDATE tbl_turistas SET nombre_turista_1 ='$n_1_t', nombre_turista_2='$n_2_t', apellido_turista_1='$a_1_t', apellido_turista_2='$a_2_t', nacionalidad_turista='$pais_t', telefono_turista='$tel_t' WHERE documento_turista='$c_g'") or die ('error al actualizar');
-      echo "<script>alert('Actializacion exitosa');</script>";
+      echo "<script>alert('Actualizacion exitosa');</script>";
       echo "<script>window.location='misitioturista.php';</script>";
     }else {
       echo "<script>alert('La contraseña no coincide con la registrada en la base de datos');</script>";

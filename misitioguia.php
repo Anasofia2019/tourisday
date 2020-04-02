@@ -113,7 +113,7 @@ if (isset($_SESSION['guia'])) {
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">¡Desea eliminar el paquete?</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">¿Desea eliminar el paquete?</h5>
         <form class="" action="codigo_eliminar.php" method="post">
           <input type="submit" name="btn_eliminar_paquete" value="Si">
           <input  type="hidden" name="id_paq" value="<?php echo $rowss['id_paquete']; ?>" >
@@ -256,7 +256,7 @@ if (isset($_SESSION['guia'])) {
 	function eliminar_slide(id){
 		page=1;
 		var parametros = {"action":"ajax","page":page,"id":id};
-		if(confirm('Esta acción  eliminará de forma permanente el banner \n\n Desea continuar?')){
+		if(confirm('Esta acción  eliminará de forma permanente  \n\n ¿Desea continuar?')){
 		$.ajax({
 			url:'./ajax/banner_ajax.php',
 			data: parametros,
