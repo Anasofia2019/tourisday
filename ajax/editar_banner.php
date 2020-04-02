@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["titulo"])){
 	 $estado = intval($_POST['estado']);
 	 $id_banner=intval($_POST['id_banner']);
 
-	 $sql=" UPDATE tbl_paquetes  SET cedula='$cedula',titulo='$titulo', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE id_paquetes='$id_banner'";
+	 $sql=" UPDATE tbl_paquetes  SET cedula='$cedula',titulo='$titulo', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE id_paquete='$id_banner'";
 	 $query = mysqli_query($conexion,$sql);
 	// if user has been added successfully
 	if ($query) {

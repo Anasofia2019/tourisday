@@ -48,7 +48,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
        $messages[]= "El Archivo ha sido subido correctamente.";
 	   $ruta=$_FILES["fileToUpload"]["name"];
-	 $update=mysqli_query($conexion,"UPDATE tbl_paquetes SET url_image='$ruta' WHERE id_paquetes='$id_banner'");
+	 $update=mysqli_query($conexion,"UPDATE tbl_paquetes SET url_image='$ruta' WHERE id_paquete='$id_banner'");
 
     } else {
        $errors[]= "Lo sentimos, hubo un error subiendo el archivo.";

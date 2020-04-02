@@ -100,15 +100,15 @@ if($action == 'delete'){
 	/* Llamar la Cadena de Conexion*/
 	include ("../../config/conexion.php");
 	$id_image=intval($_REQUEST['id']);
-	$get_url=mysqli_query($con,"select * from tbl_paquetes where id_paquetes='$id_image'");
+	$get_url=mysqli_query($con,"select * from tbl_paquetes where id_paquete='$id_image'");
 	$rw_url=mysqli_fetch_array($get_url);
 	$url_del=$rw_url['url'];
 	$id_producto=$rw_url['id_producto'];
 	//Borra el fichero
 	$delete='../../'.$url_del;
 	@unlink($delete);
-	$delete_sql=mysqli_query($con,"delete from tbl_paquetes where id_paquetes='$id_image'");
-	$query_images=mysqli_query($con,"select * from tbl_paquetes where id_paquetes='$id_producto'");
+	$delete_sql=mysqli_query($con,"delete from tbl_paquetes where id_paquete='$id_image'");
+	$query_images=mysqli_query($con,"select * from tbl_paquetes where id_paquete='$id_producto'");
 	while ($rw_images=mysqli_fetch_array($query_images)){
 		$url=$rw_images['url'];
 		$id_image=$rw_images['id_image'];
