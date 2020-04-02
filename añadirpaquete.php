@@ -6,10 +6,10 @@ include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo')");
-$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc ");
+$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquetes) as last from tbl_paquetes order by id_paquetes desc ");
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
-$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
+$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquetes='$id_banner'");
 $count=mysqli_num_rows($sql);
 if ($count==0){
 	//header("location: bannerlist.php");
