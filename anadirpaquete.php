@@ -10,14 +10,18 @@ $sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquetes) as last fro
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
 $sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquetes='$id_banner'");
+  $c_guia= $_SESSION['guia'];
+$consulta=mysqli_query($conexion,"SELECT cedula FROM tbl_guias WHERE cedula='$c_guia' ");
+$datos=mysqli_fetch_array($consulta);
 $count=mysqli_num_rows($sql);
+
 if ($count==0){
 	//header("location: bannerlist.php");
 	//exit;
 }
 $rw=mysqli_fetch_array($sql);
 $titulo=$rw['titulo'];
-$cedula=$rw['cedula'];
+$cedula=$datos['cedula'];
 $descripcion=$rw['descripcion'];
 $url_image=$rw['url_image'];
 $orden=intval($rw['orden']);
@@ -69,7 +73,9 @@ $active_banner="active";
         <div class="form-group">
        <label for="titulo" class="col-sm-3 control-label">Cedula</label>
        <div class="col-sm-9">
-         <input type="text" class="form-control" id="cedula" value="<?php echo $cedula;?>" required name="cedula">
+
+<input type="text" class="form-control" id="cedula" value="<?php echo $cedula;?>" required name="cedula">
+
          <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
        </div>
        </div>
@@ -108,7 +114,7 @@ $active_banner="active";
 			  <div id='loader'></div>
 			  <div class='outer_div'></div>
 				<div class="col-sm-offset-3 col-sm-9">
-				  <button type="submit" class="btn btn-success">Actualizar datos</button>
+				  <button type="submit" class="btn btn-success">Crear paquete</button>
 				</div>
 			  </div>
 			</form>
