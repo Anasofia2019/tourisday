@@ -7,7 +7,7 @@ if($action == 'ajax'){
 	//Elimino producto
 	if (isset($_REQUEST['id'])){
 		$id_banner=intval($_REQUEST['id']);
-		if ($delete=mysqli_query($conexion,"delete from tbl_paquetes where id_paquetes='$id_banner'")){
+		if ($delete=mysqli_query($conexion,"delete from tbl_paquetes where id_paquete='$id_banner'")){
 			$message= "Datos eliminados satisfactoriamente";
 		} else {
 			$error= "No se pudo eliminar los datos";
@@ -20,7 +20,7 @@ if($action == 'ajax'){
 	$sWhere.=" ";
 
 
-	$sWhere.=" order by id_paquetes";
+	$sWhere.=" order by id_paquete";
 	include 'pagination.php'; //include pagination file
 	//pagination variables
 	$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
@@ -67,7 +67,7 @@ if($action == 'ajax'){
 				while($row = mysqli_fetch_array($query)){
 					$url_image=$row['url_image'];
 					$titulo=$row['titulo'];
-					$id_slide=$row['id_paquetes'];
+					$id_slide=$row['id_paquete'];
 
 					?>
 

@@ -329,8 +329,8 @@ while ($fetch=mysqli_fetch_array($consulta_f)) {
 
 
                  <div class="btn__form">
-                <input class="btn__submit" name="actualizar_turista" type="submit" value="Actualizar" id="boton_cambio">
-                   <input class="btn__reset" type="reset" value="Limpiar" id="boton_cambio2">
+                <input class="btn__submit" name="actualizar_turista" type="submit" value="Actualizar">
+                   <input class="btn__reset" type="reset" value="Limpiar">
                  </div>
          </form>
        </div>

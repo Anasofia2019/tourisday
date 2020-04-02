@@ -6,10 +6,10 @@ include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
-$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquetes) as last from tbl_paquetes order by id_paquetes desc limit 0,1");
+$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc limit 0,1");
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
-$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquetes='$id_banner'");
+$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
   $c_guia= $_SESSION['guia'];
 $consulta=mysqli_query($conexion,"SELECT cedula FROM tbl_guias WHERE cedula='$c_guia' ");
 $datos=mysqli_fetch_array($consulta);
