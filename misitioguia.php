@@ -58,6 +58,7 @@ if (isset($_SESSION['guia'])) {
 	<div class="secciones">
 
 			<article id="tab1">
+        <img src="img/welcome.svg" alt="" height="120px;" width="300px" id="welcome">
         <center><h1 id="titulo_tab1">Bienvenido apreciado guía</h1>
         <div class="contenedor_inicio">
           <img src="img/ban1.jpg" alt="">
@@ -136,8 +137,9 @@ if (isset($_SESSION['guia'])) {
 			</article>
       <br>
 			<article id="tab3">
+        <img src="img/idea.svg" alt="" width="400px" height="200px" id="logo_crear">
 
-<iframe name=miframeflotante src="anadirpaquete.php" width=990 height=550 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 style="margin-left:-25%;" ></iframe>
+<iframe name=miframeflotante src="anadirpaquete.php" width=990 height=550 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 style="margin-left:-25%;margin-top:100px;" ></iframe>
       </article>
 
 			<article id="tab4">
