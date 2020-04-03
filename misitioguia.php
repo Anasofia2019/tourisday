@@ -79,7 +79,7 @@ if (isset($_SESSION['guia'])) {
         $i=0;
         ?>
         <br><br><br><br>
-
+        
         <div class="row">
 			  <div class="col-xs-12 text-right">
 			  </div>
@@ -97,34 +97,11 @@ if (isset($_SESSION['guia'])) {
           $rowss=mysqli_fetch_array($paquetes);
           ?>
           <!-- Este div es el de los cuadritos azules que usted quiere poner pero hay que organizarlo. Te amo mi amor <3 -->
-          <div class="paquetes_guia">
 
-            <input type="text" name="" value="<?php echo $rowss['nombre_paquete']; ?>">
-            <input type="text" name="" value="<?php echo $rowss['categoria']; ?>">
-            <input type="text" name="" value="<?php echo $rowss['municipio']; ?>">
-            <input type="text" name="" value="<?php echo $rowss['descripcion']; ?>">
 
-              <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Eliminar paquete
-</button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">¿Desea eliminar el paquete?</h5>
-        <form class="" action="codigo_eliminar.php" method="post">
-          <input type="submit" name="btn_eliminar_paquete" value="Si">
-          <input  type="hidden" name="id_paq" value="<?php echo $rowss['id_paquete']; ?>" >
-        </form>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-    </div>
-  </div>
-</div>
-          </div>
-          <br><br><br><br>
+
           <?php
           $i=$i+1;
         }

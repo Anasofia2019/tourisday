@@ -6,7 +6,7 @@ include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
 $id_banner=intval($_GET['id']);
-$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquetes='$id_banner'");
+$sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
 $count=mysqli_num_rows($sql);
 
 $rw=mysqli_fetch_array($sql);
