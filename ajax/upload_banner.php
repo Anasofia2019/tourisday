@@ -4,7 +4,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUpload"]["type"]
 include ("../conexion.php");
 
 $id_banner=intval($_POST['id']);
-$target_dir = "../../img/banner/";
+$target_dir = "./img/banner/";
 $carpeta=$target_dir;
 if (!file_exists($carpeta)) {
     mkdir($carpeta, 0777, true);

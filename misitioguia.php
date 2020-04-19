@@ -79,7 +79,7 @@ if (isset($_SESSION['guia'])) {
         $i=0;
         ?>
         <br><br><br><br>
-        
+        <!-- Esta parte muestra los paquetes a los guias para que lo puedan editar o eliminar -->
         <div class="row">
 			  <div class="col-xs-12 text-right">
 			  </div>
@@ -219,6 +219,7 @@ if (isset($_SESSION['guia'])) {
 		load(1);
 	});
 	function load(page){
+    //funcion que envia a banner_ajax para cargar la pagina
 		var parametros = {"action":"ajax","page":page};
 		$.ajax({
 			url:'./ajax/banner_ajax.php',
@@ -233,6 +234,7 @@ if (isset($_SESSION['guia'])) {
 		})
 	}
 	function eliminar_slide(id){
+    //funcion que envia a banner_ajax para eliminar datos
 		page=1;
 		var parametros = {"action":"ajax","page":page,"id":id};
 		if(confirm('Esta acción  eliminará de forma permanente  \n\n ¿Desea continuar?')){

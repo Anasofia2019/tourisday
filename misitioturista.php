@@ -153,7 +153,7 @@ $datos=mysqli_fetch_array($consulta);
 			<article id="tab2">
 				<h1 >Buscar paquetes</h1>
        <br><br><br><br>
-
+    <!-- Aca se utilizo iframe para mostrar los paquetes -->
 
 
    <iframe src="mostrarpaquete.php" height="600" width="1189" id="mostar_paquetes" style="background:blue;" border></iframe>

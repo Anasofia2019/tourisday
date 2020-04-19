@@ -53,7 +53,7 @@ $active_banner="active";
 
     <div class="container">
 
-      <!-- Main component for a primary marketing message or call to action -->
+      <!-- Donde se añade los paquetes  -->
       <div class="row">
 
 
@@ -178,16 +178,16 @@ $active_banner="active";
 				var data = new FormData();
 				data.append('fileToUpload',file);
 				data.append('id',id_banner);
-
-				$.ajax({
-					url: "ajax/upload_banner.php",        // Url to which the request is send
-					type: "POST",             // Type of request to be send, called as method
-					data: data, 			  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-					contentType: false,       // The content type used when sending data to the server.
-					cache: false,             // To unable request pages to be cached
-					processData:false,        // To send DOMDocument or non processed data file it is set to false
-					success: function(data)   // A function to be called if request succeeds
-					{
+        //direcciona a upload_banner para las imagenes
+        $.ajax({
+          url: "ajax/upload_banner.php",        // URL a la que se envía la solicitud
+          type: "POST",             // Tipo de solicitud a enviar, llamada como método
+          data: data, 			  // Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
+          contentType: false,       // El tipo de contenido utilizado al enviar datos al servidor.
+          cache: false,             // Para no poder solicitar que las páginas se almacenen en caché
+          processData:false,        // Para enviar DOMDocument o archivo de datos no procesados ​​se establece en falso
+          success: function(data)   // Se llamará a una función si la solicitud tiene éxito
+          {
 						$(".upload-msg").html(data);
 						window.setTimeout(function() {
 						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
@@ -197,7 +197,7 @@ $active_banner="active";
 				});
 
 			}
-
+//funcion que muestra si la imagen es permitida o no
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
@@ -219,7 +219,9 @@ $active_banner="active";
 
 
 	</script>
+
   <script>
+  //funcion que envia a editar_banner para actualizar datos
 		$("#editar_banner").submit(function(e) {
 
 			  $.ajax({

@@ -2,7 +2,7 @@
 include("conexion.php");
 session_start();
 if (isset($_SESSION['turista'])) {
-	
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +56,7 @@ if (isset($_SESSION['turista'])) {
 	$cont=mysqli_num_rows($consulta_v);
 	echo $cont;
 	if ($cont==0) {
-		
+
 	$insert= mysqli_query($conexion,"INSERT INTO tbl_historial_adquirido(id_paquetes,doc_turista) VALUES ($id_paquete,$docu_tu)") or die ("<script>alert('Error al Reservar');</script>");
 	echo "<script>alert('Paquete reservado de forma exitosa');</script>";
 	// echo "<script>window.location='misitioturista.php'</script>";
@@ -99,7 +99,7 @@ if (isset($_SESSION['turista'])) {
 
 
 
-               
+
             </div>
         </div>
     </div>
@@ -112,7 +112,7 @@ if (isset($_SESSION['turista'])) {
   	<script>
 	$(document).ready(function(){
     loadGallery(true, 'a.thumbnail');
-    //This function disables buttons when needed
+    //Esta función deshabilita los botones cuando sea necesario
     function disableButtons(counter_max, counter_current){
         $('#show-previous-image, #show-next-image').show();
         if(counter_max == counter_current){
@@ -168,6 +168,7 @@ if (isset($_SESSION['turista'])) {
   </body>
 </html>
 <script>
+  //funcion para mostrar si carga la imagen
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
@@ -176,15 +177,15 @@ if (isset($_SESSION['turista'])) {
 				var data = new FormData();
 				data.append('fileToUpload',file);
 				data.append('id',id_banner);
-
+        //direcciona a upload_banner archivo de ajax
 				$.ajax({
-					url: "ajax/upload_banner.php",        // Url to which the request is send
-					type: "POST",             // Type of request to be send, called as method
-					data: data, 			  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-					contentType: false,       // The content type used when sending data to the server.
-					cache: false,             // To unable request pages to be cached
-					processData:false,        // To send DOMDocument or non processed data file it is set to false
-					success: function(data)   // A function to be called if request succeeds
+					url: "ajax/upload_banner.php",        // URL a la que se envía la solicitud
+					type: "POST",             // Tipo de solicitud a enviar, llamada como método
+					data: data, 			  // Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
+					contentType: false,       // El tipo de contenido utilizado al enviar datos al servidor.
+					cache: false,             // Para no poder solicitar que las páginas se almacenen en caché
+					processData:false,        // Para enviar DOMDocument o archivo de datos no procesados ​​se establece en falso
+					success: function(data)   // Se llamará a una función si la solicitud tiene éxito
 					{
 						$(".upload-msg").html(data);
 						window.setTimeout(function() {
@@ -218,6 +219,7 @@ if (isset($_SESSION['turista'])) {
 
 	</script>
 	<script>
+  //funcion que envia a editar_banner para actualizar datos  
 		$("#editar_banner").submit(function(e) {
 
 			  $.ajax({
