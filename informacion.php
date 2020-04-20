@@ -1,53 +1,44 @@
 <!DOCTYPE html>
+<!-- es importante tener en cuenta que el contenido de esta pagina
+hace parte del mismo index -->
 <html lang="en">
 </style>
 <head>
   <title>Tourist day</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <!-- reducimos en este link el codigo css de bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+   <!-- nuestros links de font wesome  y archivo javascrypt minimizado  -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- llamamos nuestro archivo css -->
   <link rel="stylesheet" href="./css/informacion.css">
-<link rel="stylesheet" href="font.css">
-
-
+ <link rel="stylesheet" href="font.css">
 
 </head>
 
 <body class="body1">
-
-        <div class="container">
-
- <div class="contenedor_principal">
-
-
-          <div class="contenedor_titulo">
-
-            <h1>Intervenimos entre guías y turistas para promocionar el valle de aburrá.</h1><br>
-            <h2>Una forma fácil de conocer amigos y lugares.</h2> <br>
-
-
-
-
-               <div class="contenedor_banner">
-                   <a href="registroguia.php"><button type="button" name="button" id="empezar">Empezar ya</button></a>
-               <img src="img/telephone.svg" alt="">
-
-                </div>
-
-          </div>
-     </div>
-
-
-     </div>
+<!-- Aca podemos ver reflejada la información principal en un contenedor -->
+<div class="container">
+  <div class="contenedor_principal">
+    <div class="contenedor_titulo">
+       <h1>Intervenimos entre guías y turistas para promocionar el valle de aburrá.</h1><br>
+       <h2>Una forma fácil de conocer amigos y lugares.</h2> <br>
+       <div class="contenedor_banner">
+       <a href="registroguia.php"><button type="button" name="button" id="empezar">Empezar ya</button></a>
+       <img src="img/telephone.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- aca creamos la clase que va a contener la social var con las redes sociales -->
     <div class="social-bar">
       <a href="#" class="icon icon-facebook" target="_blank" ></a>
       <a href="#" class="icon icon-youtube" target="_blank"></a>
       <a href="#" class="icon icon-instagram " target="_ blank"></a>
+   </div>
 
-    </div>
 <br><br><br><br>
 
     <a href="registroguia.php"><button type="button" name="button" id="boton_guia">Ser  guía</button></a>
