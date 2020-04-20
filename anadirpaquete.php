@@ -5,12 +5,16 @@ $title="Agregar paquete";
 include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
+//para insertar imagenes
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
+//consulta para que se muestre la tabla tbl_paquetes con limites
 $sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc limit 0,1");
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
+//consulta para que se muestre la tabla tbl_paquetes
 $sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
   $c_guia= $_SESSION['guia'];
+//Consulta para que  se muestre en el campo de la cedula
 $consulta=mysqli_query($conexion,"SELECT cedula FROM tbl_guias WHERE cedula='$c_guia' ");
 $datos=mysqli_fetch_array($consulta);
 $count=mysqli_num_rows($sql);
@@ -178,7 +182,7 @@ $active_banner="active";
 				var data = new FormData();
 				data.append('fileToUpload',file);
 				data.append('id',id_banner);
-        //direcciona a upload_banner para las imagenes
+        //direcciona a upload_banner para las imagenes si se permiten o no  por el tipo o el tamaño
         $.ajax({
           url: "ajax/upload_banner.php",        // URL a la que se envía la solicitud
           type: "POST",             // Tipo de solicitud a enviar, llamada como método
@@ -198,6 +202,7 @@ $active_banner="active";
 
 			}
 //funcion que muestra si la imagen es permitida o no
+//tambien permite eliminar
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({

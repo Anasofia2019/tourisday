@@ -6,9 +6,10 @@ include ("conexion.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
 $id_banner=intval($_GET['id']);
+//trae la tabla tbl_paquetes
 $sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
 $count=mysqli_num_rows($sql);
-
+//los datos que se pidieron para que se muestre  en los campos
 $rw=mysqli_fetch_array($sql);
 $titulo=$rw['titulo'];
 $cedula=$rw['cedula'];
@@ -43,7 +44,7 @@ $active_banner="active";
 
     <div class="container">
 
-      <!-- Main component for a primary marketing message or call to action -->
+      <!-- Editar paquetes-->
       <div class="row">
 
 
@@ -158,6 +159,7 @@ $active_banner="active";
   </body>
 </html>
 <script>
+
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
@@ -166,15 +168,15 @@ $active_banner="active";
 				var data = new FormData();
 				data.append('fileToUpload',file);
 				data.append('id',id_banner);
-
+//direcciona a upload_banner para las imagenes si se permiten o no  por el tipo o el tamaño
 				$.ajax({
-					url: "ajax/upload_banner.php",        // Url to which the request is send
-					type: "POST",             // Type of request to be send, called as method
-					data: data, 			  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-					contentType: false,       // The content type used when sending data to the server.
-					cache: false,             // To unable request pages to be cached
-					processData:false,        // To send DOMDocument or non processed data file it is set to false
-					success: function(data)   // A function to be called if request succeeds
+          url: "ajax/upload_banner.php",        // URL a la que se envía la solicitud
+          type: "POST",             // Tipo de solicitud a enviar, llamada como método
+          data: data, 			  // Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
+          contentType: false,       // El tipo de contenido utilizado al enviar datos al servidor.
+          cache: false,             // Para no poder solicitar que las páginas se almacenen en caché
+          processData:false,        // Para enviar DOMDocument o archivo de datos no procesados ​​se establece en falso
+          success: function(data)   // Se llamará a una función si la solicitud tiene éxito
 					{
 						$(".upload-msg").html(data);
 						window.setTimeout(function() {
@@ -185,7 +187,8 @@ $active_banner="active";
 				});
 
 			}
-
+//funcion que muestra si la imagen es permitida o no
+//tambien permite eliminar
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
@@ -208,6 +211,7 @@ $active_banner="active";
 
 	</script>
 	<script>
+  //funcion para editar
 		$("#editar_banner").submit(function(e) {
 
 			  $.ajax({
