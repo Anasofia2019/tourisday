@@ -12,31 +12,38 @@ if (isset($_SESSION['guia'])) {
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-  <title>Tourist day</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
+     <title>Tourist day</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- nuestro codigo css bootstrap minificado -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- link de fontawesome para los iconos -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- aqui tenemos el icono que se refleja en el buscador -->
     <link rel="shortcut- icon" type="image/x-icon" href="./img/mapa.svg">
-   </head>
+  </head>
 
-  <body style="background:#a0c8f7;">
+ <body style="background:#a0c8f7;">
+<!-- Aqui encontramos nuestra navbar que va contener
+el logo y el dropdown  -->
 
-   <header>
-    <nav class="navbar navbar-default">
+  <header>
+     <!-- Ya dentro del header llamamos la clase header de bootstrap -->
+  <nav class="navbar navbar-default">
      <div class="container-fluid">
      <div class="navbar-header">
+      <!-- Aqui podemos ver que se crea un boton desplegable -->
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+          <span class="sr-only">menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+       </button>
 
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-             <span class="sr-only">menu</span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-  </button>
-  <div class="contenedor_logo">
+      <div class="contenedor_logo">
        <img src="img/mapa.svg" style="width: 200px; height:80px;">
-    <div id="titulo_logo"><h1>TOURIST DAY</h1></div>
+      <div id="titulo_logo"><h1>TOURIST DAY</h1></div>
+
   </div>
 </div>
 

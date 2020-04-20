@@ -11,6 +11,8 @@ $('ul.tabs li a').click(function(){
  $(this).addClass('active');
  $('.secciones article').hide();
 
+// aqui  nuestro javascrypt va a realizar un cambio de articulo por el tarjeteo de los href
+// lo que significa que buscara todos los valores coincidentes
  var activeTab = $(this).attr('href');
  $(activeTab).show();
  return false;
@@ -20,7 +22,7 @@ $('ul.tabs li a').click(function(){
 
 
 
-
+//aqui encontramos el codigo de nuestro dropdawn repartido en tres secciones
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
