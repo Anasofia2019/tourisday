@@ -30,49 +30,45 @@ el logo y el dropdown  -->
   <header>
      <!-- Ya dentro del header llamamos la clase header de bootstrap -->
   <nav class="navbar navbar-default">
-     <div class="container-fluid">
+<div class="container-fluid">
      <div class="navbar-header">
-      <!-- Aqui podemos ver que se crea un boton desplegable -->
+      <!-- Aqui podemos ver que al disminuir el tamaño del dispositivo en que se observa la plataforma  cambia la vista del menu -->
        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
           <span class="sr-only">menu</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
        </button>
-
+    <!-- En esta parte se encuentra nuestro logo -->
       <div class="contenedor_logo">
        <img src="img/mapa.svg" style="width: 200px; height:80px;">
-      <div id="titulo_logo"><h1>TOURIST DAY</h1></div>
-
-  </div>
+       <div id="titulo_logo"><h1>TOURIST DAY</h1></div>
+      </div>
 </div>
-
-<div class="contenedor_botones">
-  <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Registrarme</button>
-  <div id="myDropdown" class="dropdown-content">
+ <!-- creamos nuestros botones dentro del dropdawn desplegable -->
+ <div class="contenedor_botones">
+<div class="dropdown">
+<!-- Aqui se crea un evento de tipo onclick en un dropdown desplegable  -->
+ <button onclick="myFunction()" class="dropbtn">Registrarme</button>
+    <div id="myDropdown" class="dropdown-content">
     <a href="registroturista.php">Como turista</a>
     <a href="registroguia.php">Como guía</a>
-
+    </div>
   </div>
-</div>
- <a href="inicio.php"><button type="button" name="button">Iniciar sesión</button></a>
+  <!-- Se crea un segundo botón dentro de un href -->
+  <a href="inicio.php"><button type="button" name="button">Iniciar sesión</button></a>
 
+ </div>
+  </nav>
+</header>
+<div>
 
-</div>
-
-
-       </nav>
-    </header>
-
-    <div>
-      <?php
-    if(@ $_GET['mod']=="")
+  <?php
+  if(@ $_GET['mod']=="")
     {
     require_once("informacion.php");
     }
-
-    else
+  else
     if(@ $_GET['mod']=="aa")
     {
     require_once("informacion.php");
@@ -90,13 +86,13 @@ el logo y el dropdown  -->
     }
     ?>
 
-
+<!-- Retomamos codigo javascrypt para los eventos del dropdawn -->
 <script>
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
     }
 
-    // Close the dropdown if the user clicks outside of it
+// Cierre el menú desplegable si el usuario hace clic fuera de él
     window.onclick = function(event) {
       if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
