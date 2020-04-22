@@ -43,8 +43,7 @@ $active_banner="active";
 
 
     <div class="container">
-
-      <!-- Editar paquetes-->
+<!--- Esta parte es para editar de la información de los paquetes--->
       <div class="row">
 
 
@@ -111,6 +110,7 @@ $active_banner="active";
 
 
    </div>
+   <!--- Esta parte es para cambiar la imagen del paquete--->
    <div class="col-md-5">
     <h3 ><span class="glyphicon glyphicon-picture"></span> Imagen</h3>
 

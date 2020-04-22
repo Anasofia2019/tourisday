@@ -198,6 +198,7 @@ if (isset($_SESSION['turista'])) {
 			}
 
 			function eliminar(id){
+        //Funcion para eliminar
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
 							url:'ajax/upload2.php',
@@ -219,7 +220,7 @@ if (isset($_SESSION['turista'])) {
 
 	</script>
 	<script>
-  //funcion que envia a editar_banner para actualizar datos  
+  //funcion que envia a editar_banner para actualizar datos
 		$("#editar_banner").submit(function(e) {
 
 			  $.ajax({
