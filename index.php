@@ -24,6 +24,8 @@ if (isset($_SESSION['guia'])) {
   </head>
 
  <body style="background:#a0c8f7;">
+
+   <!-- hola mundo -->
 <!-- Aqui encontramos nuestra navbar que va contener
 el logo y el dropdown  -->
 
