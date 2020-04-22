@@ -115,7 +115,7 @@ if (isset($_SESSION['guia'])) {
       <br>
 			<article id="tab3">
         <img src="img/idea.svg" alt="" width="400px" height="200px" id="logo_crear">
-
+<!-- Aca se utilizo iframe para crear los paquetes -->
 <iframe name=miframeflotante src="anadirpaquete.php" width=990 height=550 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 style="margin-left:-25%;margin-top:100px;" ></iframe>
       </article>
 
