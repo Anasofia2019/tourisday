@@ -1,8 +1,9 @@
 <?php
 include 'conexion.php';
-
+// actualizar guia es el nombre del boton de la pagina "misitioguia.php"
 if (isset($_POST['actualizar_guia'])) {
 
+//Los nombres de los campos
   $c_g=$_POST['cedula_g'];
   $no_1_g=$_POST['nom_guia_1'];
 	$no_2_g=$_POST['nom_guia_2'];
@@ -11,24 +12,33 @@ if (isset($_POST['actualizar_guia'])) {
   $ciu_g=$_POST['ciudad_guia'];
   $pass_1_g=$_POST['pass_guia_1'];
   $pass_2_g=$_POST['pass_guia_2'];
-
+//Verifico que las dos contraseñas sean identicas
   if ($pass_1_g==$pass_2_g) {
+    //consulta para coger los datos del guia
     $consulta=mysqli_query($conexion,"SELECT * FROM tbl_guias WHERE cedula='$c_g'");
     $row=mysqli_fetch_array($consulta);
+    //Verifico que la contraseña ingresada sea igual a la de la base de datos
     if ($row['contra_guia']==$pass_1_g) {
+      //Hago el cambio en la base de datos
       $cambio_g=mysqli_query($conexion,"UPDATE tbl_guias SET nombre_guia_1='$no_1_g', nombre_guia_2='$no_2_g', apellido_guia_1='$ap_1_g', apellido_guia_2='$ap_2_g', ciudad_guia='$ciu_g' WHERE cedula='$c_g'") or die ('error al actualizar');
+      //Mensaje de exito y redireccion a la pagina del guia
       echo "<script>alert('Actualizacion exitosa');</script>";
       echo "<script>window.location='misitioguia.php';</script>";
     }else {
+      //mensaje que dice que la condicion no se cumplió y se redirecciona a la pagina del guia
       echo "<script>alert('La contraseña no coincide con la registrada en la base de datos');</script>";
       echo "<script>window.location='misitioguia.php';</script>";
     }
   }else {
+    //Mensaje que dice que las contraseñas no coinciden y no se puede realizar el cambio
     echo "<script>alert('Las contraseñas no inciden');</script>";
     echo "<script>window.location='misitioguia.php';</script>";
   }
 
+
+//"actializar_turista" Es el nombre del boton en la pagina "misitioguia.php"
 }elseif (isset($_POST['actualizar_turista'])) {
+  //Es el nombre de los campos que se actualizarán
   $c_g=$_POST['ced_turista'];
   $n_1_t=$_POST['nom_turista_1'];
   $n_2_t=$_POST['nom_turista_2'];
@@ -39,18 +49,27 @@ if (isset($_POST['actualizar_guia'])) {
   $p_t_1=$_POST['pass_turista_1'];
   $p_t_2=$_POST['pass_turista_2'];
 
+//Verifico que las dos contraseñas sean identicas
   if ($p_t_1==$p_t_2) {
+
+    //consulta para coger los datos del turista
     $consulta=mysqli_query($conexion,"SELECT * FROM tbl_turistas WHERE documento_turista='$c_g'");
     $row=mysqli_fetch_array($consulta);
+
+      //Verifico que la contraseña ingresada sea igual a la de la base de datos
     if ($row['contra_turista']==$p_t_1) {
+      //Hago el cambio en la base de datos
       $cambio_g=mysqli_query($conexion,"UPDATE tbl_turistas SET nombre_turista_1 ='$n_1_t', nombre_turista_2='$n_2_t', apellido_turista_1='$a_1_t', apellido_turista_2='$a_2_t', nacionalidad_turista='$pais_t', telefono_turista='$tel_t' WHERE documento_turista='$c_g'") or die ('error al actualizar');
+      //Mensaje de exito y redireccion a la pagina del turista
       echo "<script>alert('Actualizacion exitosa');</script>";
       echo "<script>window.location='misitioturista.php';</script>";
     }else {
+      //mensaje que dice que la condicion no se cumplió y se redirecciona a la pagina del tursita
       echo "<script>alert('La contraseña no coincide con la registrada en la base de datos');</script>";
       echo "<script>window.location='misitioguia.php';</script>";
     }
   }else {
+     //Mensaje que dice que las contraseñas no coinciden y no se puede realizar el cambio
     echo "<script>alert('Las contraseñas no inciden');</script>";
     echo "<script>window.location='misitioturista.php';</script>";
 

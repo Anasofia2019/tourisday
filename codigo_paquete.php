@@ -1,18 +1,6 @@
 <?php
 include 'conexion.php';
-if (isset($_POST['btn_paquete'])) {
-  $cedula_guia=$_POST['cedula_g'];
-  $nombre_p=$_POST['nom_paquete'];
-  $ciudad_g=$_POST['a'];
-  $categoria_g=$_POST['c_guia'];
-  $especificaciones=$_POST['especificar'];
-
-
-  $insert= mysqli_query($conexion,"INSERT INTO tbl_especificaciones_paquete(id_paquete,cedula_guia,nombre_paquete,categoria,municipio,descripcion) VALUES (NULL,$cedula_guia, '$nombre_p', '$categoria_g', '$ciudad_g', '$especificaciones')") or die ('error al insertar');
-  echo "<script>alert('Paquete subido de forma exitosa');</script>";
-  echo "<script>window.location='misitioguia.php'</script>";
-
-}elseif (isset($_POST['btn_comentario'])) {
+if (isset($_POST['btn_comentario'])) {
 		$cedula_tt=$_POST['ced_t'];
 		$puntos=$_POST['puntuacion_p'];
 		$id_paq=$_POST['btn_comentario'];
