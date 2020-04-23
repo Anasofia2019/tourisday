@@ -14,21 +14,30 @@ if (isset($_SESSION['guia'])) {
   $datos= mysqli_fetch_array($consulta);
   ?>
 <html lang="en" dir="ltr">
-<head>
 
     <title>sitioguia</title>
+   <!-- Utf-8 permite el uso de caracteres
+   en las etiquetas meta -->
     <meta charset="utf-8">
+   <!-- Viewport nos da la vista de la pagina
+   en los diferentes dispositivos  -->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="http://localhost/touristday/misitioguia.php">
-  <link rel="stylesheet" href="css/misitioguia.css">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="javascrypt/main.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet"href="//code.query.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- Este link lo que nos permite utilizar un appi de google
+que utiliza codigo ajax para los efectos de jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- este link nos llama el codigo css  -->
+   <link rel="stylesheet" href="css/misitioguia.css">
+   <!-- link que utiliza bootstrap para usar codigo jquery    -->
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <!-- este codigo nos direcciona al archivo .js
+ que nos da la interacción de efectos de la página  -->
+   <script src="javascrypt/main.js"></script>
+   <!-- Utilizamos nuestra fuente personalizada -->
+   <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+     <!-- código bootstrap minimizado  -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- código de temas bootstrap minimizado -->
+   <link rel="stylesheet"href="//code.query.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
 </head>
@@ -37,24 +46,36 @@ if (isset($_SESSION['guia'])) {
 
 
 
+<!-- Este contenedor tendra los botones de
+nuestros tabs en el modulo guia  -->
+<div class="wrap" >
+    <!-- Los tabs están organizados en listas -->
+		  <ul class="tabs" >
+        <!-- Cada una de estas etiquetas  li es
+        un boton que genera el evento de carga y recarga de los tabs
+      que son segmentos de codigo  -->
+			    <li><a href="#tab1"><span class="glyphicon  glyphicon-user"></span><span class="tab-text">Inicio</span></a></li>
+			    <li><a href="#tab2"><span class="glyphicon  glyphicon-search"></span><span class="tab-text">Paquetes</span></a></li>
+			    <li><a href="#tab3"><span class="glyphicon  glyphicon-plus"></span><span class="tab-text">Añadir</span></a></li>
+			    <li><a href="#tab4"><span class="glyphicon glyphicon-star"></span><span class="tab-text">Mi información</span></a></li>
 
-  <div class="wrap" >
-		<ul class="tabs" >
-			<li><a href="#tab1"><span class="glyphicon  glyphicon-user"></span><span class="tab-text">Inicio</span></a></li>
-			<li><a href="#tab2"><span class="glyphicon  glyphicon-search"></span><span class="tab-text">Paquetes</span></a></li>
-			<li><a href="#tab3"><span class="glyphicon  glyphicon-plus"></span><span class="tab-text">Añadir</span></a></li>
-			<li><a href="#tab4"><span class="glyphicon glyphicon-star"></span><span class="tab-text">Mi información</span></a></li>
+  <!-- Creamos un items a parte de de los tabs
+  que pertenece a la clase dropdown -->
+  <div class="dropdown">
+    <!-- Este  botón contiene la foto del pérfil de
+    nuestro usuario con la cual se logueó -->
+   <button class="dropbtn" style="margin-top:13px; height:50px; width:50px; background: url(<?php echo $datos['foto_guia']; ?>); background-size: cover; border-radius:50%;"></button>
+  <!-- Contenido desplegable del dropdown -->
+     <div class="dropdown-content">
+       <!-- Lista de links de opciones -->
+         <a href="#">Configuracion</a>
+         <a href="#">Ayuda</a>
+         <a href="cerrar.php">Salir</a>
+     </div>
+   </div>
+ </ul>
 
-
-      <div class="dropdown">
- <button class="dropbtn" style="margin-top:13px; height:50px; width:50px; background: url(<?php echo $datos['foto_guia']; ?>); background-size: cover; border-radius:50%;"></button>
- <div class="dropdown-content">
-   <a href="#">Configuracion</a>
-   <a href="#">Ayuda</a>
-   <a href="cerrar.php">Salir</a>
- </div>
-</div>
-  </ul>
+ <!-- contenedor de las secciones  -->
 	<div class="secciones">
 
 			<article id="tab1">
