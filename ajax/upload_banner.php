@@ -13,7 +13,7 @@ if (!file_exists($carpeta)) {
 $target_file = $carpeta . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
+// Comprueba si el archivo de imagen es una imagen real o una imagen falsa
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
@@ -24,26 +24,26 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
-// Check if file already exists
+// Comprobar si el archivo ya existe
 if (file_exists($target_file)) {
     $errors[]="Lo sentimos, archivo ya existe.";
     $uploadOk = 0;
 }
-// Check file size
+// Comprobar el tamaño del archivo
 if ($_FILES["fileToUpload"]["size"] > 524288) {
     $errors[]= "Lo sentimos, el archivo es demasiado grande.  Tamaño máximo admitido: 0.5 MB";
     $uploadOk = 0;
 }
-// Allow certain file formats
+//  Permitir ciertos formatos de archivo
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
     $errors[]= "Lo sentimos, sólo archivos JPG, JPEG, PNG & GIF  son permitidos.";
     $uploadOk = 0;
 }
-// Check if $uploadOk is set to 0 by an error
+// Compruebe si $ uploadOk está establecido en 0 por un error
 if ($uploadOk == 0) {
     $errors[]= "Lo sentimos, tu archivo no fue subido.";
-// if everything is ok, try to upload file
+//  si todo está bien, intenta subir el archivo
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
        $messages[]= "El Archivo ha sido subido correctamente.";
@@ -68,7 +68,7 @@ if (isset($errors)){
 	</div>
 	<?php
 }
-
+//manda aviso si el archivo es subido correctamente
 if (isset($messages)){
 	?>
 	<div class="alert alert-success alert-dismissible" role="alert">
