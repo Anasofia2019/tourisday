@@ -10,12 +10,13 @@ if (isset($_SESSION['turista'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--
+Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquier otro contenido principal debe venir * después * de estas etiquetas -->
     <title style="font-family:verdana;">Paquetes</title>
-	<!-- Latest compiled and minified CSS -->
+	<!--Estilos personalizados para esta plantilla  -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
+	<!--Tema opcional -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   </head>
   <body style="background: linear-gradient(to bottom, #ffffff 27%, #ffff66 101%);">
@@ -105,9 +106,10 @@ if (isset($_SESSION['turista'])) {
     </div>
 </div>
 	</div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- JQuery (necesario para los complementos de JavaScript de Bootstrap) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
+	<!--
+Último JavaScript compilado y minificado -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   	<script>
 	$(document).ready(function(){
@@ -123,8 +125,8 @@ if (isset($_SESSION['turista'])) {
     }
     /**
      *
-     * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
-     * @param setClickAttr  Sets the attribute for the click handler.
+     * @param setIDs       Establece ID cuando se carga DOM. Si usa un contador PHP, establezca en falso.
+     * @param setClickAttr  Establece el atributo para el controlador de clics.
      */
 
     function loadGallery(setIDs, setClickAttr){

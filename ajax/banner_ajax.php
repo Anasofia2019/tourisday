@@ -21,14 +21,14 @@ if($action == 'ajax'){
 
 
 	$sWhere.=" order by id_paquete";
-	include 'pagination.php'; //include pagination file
-	//pagination variables
+	include 'pagination.php'; //incluir archivo de paginación
+	//variables de paginación
 	$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
-	$per_page = 12; //how much records you want to show
-	$adjacents  = 4; //gap between pages after number of adjacents
+	$per_page = 12; //cuantos registros quieres mostrar
+	$adjacents  = 4; //espacio entre páginas después del número de adyacentes
 	$offset = ($page - 1) * $per_page;
 
-	//Count the total number of row in your table*/
+	//Cuente el número total de filas en su tabla*/
 	$count_query   = mysqli_query($conexion,"SELECT count(*) AS numrows FROM $tables  $sWhere ");
 	if ($row= mysqli_fetch_array($count_query))
 	{
@@ -37,7 +37,7 @@ if($action == 'ajax'){
 	else {echo mysqli_error($conexion);}
 	$total_pages = ceil($numrows/$per_page);
 	$reload = './productslist.php';
-	//main query to fetch the data
+	//consulta principal para recuperar los datos
 	$query = mysqli_query($conexion,"SELECT * FROM  $tables  $sWhere LIMIT $offset,$per_page");
 
 	if (isset($message)){
@@ -58,7 +58,7 @@ if($action == 'ajax'){
 
 		<?php
 	}
-	//loop through fetched data
+	//recorrer los datos recuperados
 	if ($numrows>0)	{
 		?>
 

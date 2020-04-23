@@ -27,15 +27,16 @@ $active_banner="active";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--
+Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquier otro contenido principal debe venir * después * de estas etiquetas -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../images/ico/favicon.ico">
     <title><?php echo $title;?></title>
     <!-- Bootstrap core CSS -->
-    <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- Custom styles for this template -->
+    <!-- CSS compilado y minificado más reciente -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Estilos personalizados para esta plantilla -->
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
 	<link href="css/preview-image.css" rel="stylesheet">
   </head>
@@ -52,7 +53,7 @@ $active_banner="active";
      <form class="form-horizontal" id="editar_banner">
 
 
-
+<!--Este es el campo del titulo-->
        <div class="form-group">
        <label for="titulo" class="col-sm-3 control-label">Titulo</label>
        <div class="col-sm-9">
@@ -60,6 +61,7 @@ $active_banner="active";
          <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
        </div>
        </div>
+       <!--Este es el campo de la cedula-->
        <div class="form-group">
       <label for="titulo" class="col-sm-3 control-label">Cedula</label>
       <div class="col-sm-9">
@@ -68,14 +70,14 @@ $active_banner="active";
       </div>
       </div>
 
-
+<!--Este es el campo de la descripcion-->
        <div class="form-group">
        <label for="titulo" class="col-sm-3 control-label">Descripción</label>
        <div class="col-sm-9">
          <textarea class='form-control' name="descripcion" id="descripcion" required rows=8><?php echo $descripcion;?></textarea>
        </div>
        </div>
-
+<!--Este es el campo de la Orden-->
        <div class="form-group">
        <label for="orden" class="col-sm-3 control-label">Orden</label>
        <div class="col-sm-9">
@@ -83,7 +85,7 @@ $active_banner="active";
        </div>
        </div>
 
-
+<!--Este es el campo del Estado-->
        <div class="form-group">
        <label for="estado" class="col-sm-3 control-label">Estado</label>
        <div class="col-sm-9">
@@ -96,7 +98,7 @@ $active_banner="active";
 
 
 
-
+<!--Este es el boton para actualizar los datos-->
 
        <div class="form-group">
        <div id='loader'></div>

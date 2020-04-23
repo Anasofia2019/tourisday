@@ -4,7 +4,7 @@ session_start();
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["titulo"])){
 	/* Llamar la Cadena de Conexion*/
 	include ("../conexion.php");
-	// escaping, additionally removing everything that could be (html/javascript-) code
+	// escapar, además de eliminar todo lo que podría ser código (html / javascript-)
      $titulo = mysqli_real_escape_string($conexion,(strip_tags($_POST['titulo'], ENT_QUOTES)));
 		 $cedula = mysqli_real_escape_string($conexion,(strip_tags($_POST['cedula'])));
 	 $descripcion = mysqli_real_escape_string($conexion,($_POST['descripcion']));
@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["titulo"])){
 
 	 $sql=" UPDATE tbl_paquetes  SET cedula='$cedula',titulo='$titulo', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE id_paquete='$id_banner'";
 	 $query = mysqli_query($conexion,$sql);
-	// if user has been added successfully
+	//si el usuario ha sido agregado exitosamente
 	if ($query) {
 		$messages[] = "Datos  han sido actualizados satisfactoriamente.";
 	} else {
