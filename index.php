@@ -24,11 +24,12 @@ if (isset($_SESSION['guia'])) {
   </head>
 
  <body style="background:#a0c8f7;">
-<!-- Aqui encontramos nuestra navbar que va contener
-el logo y el dropdown  -->
+<!-- Aqui encontramos nuestra navbar
+ que va contener el logo y el dropdown  -->
 
-  <header>
-     <!-- Ya dentro del header llamamos la clase header de bootstrap -->
+<header>
+<!-- Ya dentro del header llamamos
+ la clase header de bootstrap -->
   <nav class="navbar navbar-default">
 <div class="container-fluid">
      <div class="navbar-header">
