@@ -9,17 +9,23 @@ $datos=mysqli_fetch_array($consulta);
 ?>
 <html lang="en" dir="ltr">
 <head>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- código bootstrap minimizado css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Utilizamos nuestra fuente personalizada -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <!-- Link que nos permite  hacer uso de las librerias de bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>sitio turista</title>
     <meta charset="utf-8">
+    <!-- Etiqueta nos nos da una vista
+    del software en el dispositivo que se abra -->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- escrypt que nos permite hacer uso
+    de las bibliotecas de jquery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="http://localhost/touristday/misitioguia.php">
+  <!-- link que direcciona al diseño css -->
   <link rel="stylesheet" href="css/misitioturista.css">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="javascrypt/main.js"></script>

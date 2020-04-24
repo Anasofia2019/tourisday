@@ -77,11 +77,15 @@ nuestros tabs en el modulo guia  -->
 
  <!-- contenedor de las secciones  -->
 	<div class="secciones">
-
+   <!-- Primer tab que que es en realidad un segmento de página -->
 			<article id="tab1">
+        <!-- Imagen principal de la parte superior -->
         <img src="img/welcome.svg" alt="" height="120px;" width="300px" id="welcome">
+        <!-- Texto de bienvenida -->
         <center><h1 id="titulo_tab1">Bienvenido apreciado guía</h1>
+         <!-- banner de bienvenida -->
         <div class="contenedor_inicio">
+            <!-- instructivo del guia -->
           <img src="img/ban1.jpg" alt="">
 
         </div>
@@ -90,8 +94,11 @@ nuestros tabs en el modulo guia  -->
 
       </article>
       <br>
+      <!-- Siguiente tab que es el modulo de paquetes  -->
 			<article id="tab2">
+        <!-- Icono principal del modulo paquetes -->
         <img src="img/paket.svg" alt="" height="200px">
+        <!-- Titulo del modulo del paquete -->
 				<h2 id="titulo_paquete">Mis paquetes</h2>
 
         <?php
@@ -137,32 +144,36 @@ nuestros tabs en el modulo guia  -->
 			<article id="tab3">
         <img src="img/idea.svg" alt="" width="400px" height="200px" id="logo_crear">
 <!-- Aca se utilizo iframe para crear los paquetes -->
-<iframe name=miframeflotante src="anadirpaquete.php" width=990 height=550 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 style="margin-left:-25%;margin-top:100px;" ></iframe>
+    <iframe name=miframeflotante src="anadirpaquete.php" width=990 height=550 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 style="margin-left:-25%;margin-top:100px;" ></iframe>
       </article>
-
+ <!-- último modulo de actualizar información -->
 			<article id="tab4">
+       <!-- Logo del formulario -->
         <img src="img/candado.svg" alt="" id="imagen_cambiar">
-
+      <!-- Contenedor  del formulario -->
         <div class="contenedor_registro" id="cambiar_info">
+      <!-- Caja de registro interno -->
         <div class="caja_registro" style="">
+          <!-- Se crea una clase form p
+          para dar forma al formulario -->
         <div class="form__top">
 
-
+     <!-- Titulo del formulario interno  -->
      <div class="tilin" >  <h2><span class="t1">Cambiar mi información</span></h2><div>
+
          </div>
+         <!-- Caja del formulario -->
          <form class="form__reg" action="codigo_actualizar.php" method="post">
+           <!-- Campos de datos -->
          <input type="hidden" name="cedula_g" value="<?php echo $datos['cedula'] ?>"  readonly>
          <input class="input" value="<?php echo $datos['nombre_guia_1'] ?>" name="nom_guia_1" type="text" placeholder="&#128100; Primer Nombre" required autofocus>
          <label for="titulo" class="col-sm-3 control-label">primer_nombre:</label>
-
-           <input class="input" value="<?php echo $datos['nombre_guia_2'] ?>" name="nom_guia_2" type="text" placeholder="&#128100;  Segundo Nombre" required autofocus>
-           <label for="titulo" class="col-sm-3 control-label">segundo_nombre:</label>
-
-           <input class="input" value="<?php echo $datos['apellido_guia_1'] ?>" name="ape_guia_1" type="text" placeholder="&#128100;  Primer Apellido" required autofocus>
-           <label for="titulo" class="col-sm-3 control-label">primer_apellido:</label>
-
-             <input class="input" value="<?php echo $datos['apellido_guia_2']; ?>"name="ape_guia_2" type="text" placeholder="&#128100;  Segundo Apellido" required autofocus>
-             <label for="titulo" class="col-sm-3 control-label">segundo_apellido:</label> <br><br>
+         <input class="input" value="<?php echo $datos['nombre_guia_2'] ?>" name="nom_guia_2" type="text" placeholder="&#128100;  Segundo Nombre" required autofocus>
+         <label for="titulo" class="col-sm-3 control-label">segundo_nombre:</label>
+         <input class="input" value="<?php echo $datos['apellido_guia_1'] ?>" name="ape_guia_1" type="text" placeholder="&#128100;  Primer Apellido" required autofocus>
+         <label for="titulo" class="col-sm-3 control-label">primer_apellido:</label>
+         <input class="input" value="<?php echo $datos['apellido_guia_2']; ?>"name="ape_guia_2" type="text" placeholder="&#128100;  Segundo Apellido" required autofocus>
+         <label for="titulo" class="col-sm-3 control-label">segundo_apellido:</label> <br><br>
 
 
                          municipio_residencia:<select class="input" name="ciudad_guia">
@@ -201,6 +212,7 @@ nuestros tabs en el modulo guia  -->
                             <option>Valparaíso</option>
                             <option>Venecia</option>
                          </select> <br><br>
+
                          <label for="titulo" class="col-sm-3 control-label">contaseña:</label>
 
                  <input class="input" name="pass_guia_1" type="password" placeholder="&#x1F512;  Contraseña" required> <br> <br>
@@ -208,9 +220,11 @@ nuestros tabs en el modulo guia  -->
 
                  <input class="input" name="pass_guia_2" type="password" placeholder="&#x1F512;  Confirmar contraseña" required>
 
-
+            <!-- Contenedor de botones del formulario -->
                  <div class="btn__form">
+                   <!-- Boton actualizar -->
                 <input class="btn__submit" name="actualizar_guia" type="submit" value="Actializar" id="boton1">
+                 <!-- Boton de limpiar -->
                    <input class="btn__reset" type="reset" value="Limpiar" id="boton1">
                  </div>
          </form>
@@ -222,8 +236,9 @@ nuestros tabs en el modulo guia  -->
 
 
 
-
+<!-- link de codigo  jquery minimizado  -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- link de  codigo bootstrap minimizado -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 <!-- hola -->
