@@ -27,95 +27,133 @@ $datos=mysqli_fetch_array($consulta);
   <link rel="stylesheet" href="http://localhost/touristday/misitioguia.php">
   <!-- link que direcciona al diseño css -->
   <link rel="stylesheet" href="css/misitioturista.css">
+  <!-- link que utiliza bootstrap para usar codigo jquery    -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- este codigo nos direcciona al archivo .js
+que nos da la interacción de efectos de la página  -->
   <script src="javascrypt/main.js"></script>
+  <!-- Utilizamos nuestra fuente personalizada -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <!-- código bootstrap minimizado  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
 </head>
 
 <body style=" background:#a0c8f7 ;">
-
-
-
-
+  <!-- Este contenedor tendra los botones de
+  nuestros tabs en el modulo turista  -->
   <div class="wrap">
-		<ul class="tabs">
-			<li><a href="#tab1"><span class="glyphicon  glyphicon-user"></span><span class="tab-text">Inicio</span></a></li>
-			<li><a href="#tab2"><span class="glyphicon  glyphicon-search"></span><span class="tab-text">Paquetes</span></a></li>
-			<li><a href="#tab3"><span class=" glyphicon glyphicon-check"></span><span class="tab-text">Favoritos</span></a></li>
-			<li><a href="#tab4"><span class=" glyphicon glyphicon-star"></span><span class="tab-text">Mi información</span></a></li>
-
-      <div class="dropdown">
+    <!-- Los tabs están organizados en listas -->
+		  <ul class="tabs">
+        <!-- Cada una de estas etiquetas  li es
+        un boton que genera el evento de carga y recarga de los tabs
+      que son segmentos de codigo  -->
+			  <li><a href="#tab1"><span class="glyphicon  glyphicon-user"></span><span class="tab-text">Inicio</span></a></li>
+			  <li><a href="#tab2"><span class="glyphicon  glyphicon-search"></span><span class="tab-text">Paquetes</span></a></li>
+			  <li><a href="#tab3"><span class=" glyphicon glyphicon-check"></span><span class="tab-text">Favoritos</span></a></li>
+			  <li><a href="#tab4"><span class=" glyphicon glyphicon-star"></span><span class="tab-text">Mi información</span></a></li>
+        <!-- Creamos un items a parte de de los tabs
+        que pertenece a la clase dropdown -->
+     <div class="dropdown">
+        <!-- Este  botón contiene la foto del pérfil de
+        nuestro usuario con la cual se logueó -->
         <?php $imagen = $datos['foto_turista']; ?>
- <button class="dropbtn" style="margin-top:13px; height:50px; width:50px; background: url(<?php echo $imagen ?>); background-size: cover; border-radius:50%;"></button>
+        <button class="dropbtn" style="margin-top:13px; height:50px; width:50px; background: url(<?php echo $imagen ?>); background-size: cover; border-radius:50%;"></button>
+ <!-- Contenido desplegable del dropdown -->
  <div class="dropdown-content">
-   <a href="#">Configuracion</a>
-   <a href="#">Ayuda</a>
-   <a href="cerrar.php">Salir</a>
- </div>
-</div>
+   <!-- Lista de links de opciones -->
+       <a href="#">Configuracion</a>
+       <a href="#">Ayuda</a>
+       <a href="cerrar.php">Salir</a>
+      </div>
+    </div>
   </ul>
-	<div class="secciones">
+  <!-- contenedor de las secciones  -->
+<div class="secciones">
+  <!-- Primer articulo de contenido
+es decir un modulo del sitio-->
 			<article id="tab1">
+       <!-- Banner de bienvenida  -->
         <img src="img/targeta.png" alt="" style="width:900px;margin-top:50px;margin-left:50px;">
 				<!-- <h1>Bienvenido apreciado turista</h1>
         <img src="img/banner_turista.jpg" alt="" id="poster">
       <p> Te damos la bienvenida y esperamos que tengas una excelente experiencia como usuario de tourist day, es momento de empezar la aventura de una forma dinamica e interactiva con tu portátil o smarphone </p>
        <img src="img/mapa.svg" alt="" id="mapa_guia">
       <h3 id="titulo_mapa">TOURIST DAY</h3> -->
+
+
       <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
 
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <!-- Segundo banner de bienvenida -->
     <img src="img/banner_turista.jpg" alt="" class="banner_turista" width="900px;" height="500px;" style="mar">
+    <!-- Información del banner -->
     <hr style="width:200px;margin-top:-200px;" class="w3-opacity">
     <p style="  background: linear-gradient(to bottom, #ffffff 27%, #6699ff 101%);padding:10px;margin-left:-20px;font-family:verdana;font-weight:400px;">
+
       En touristday eres nuestra prioridad,podrás contar con nosotros y con nuestro equipo de trabajo, que te ayudará a resolver las
       inquietudes que puedas tener como turista en la plataforma ya sea por las redes sociales que ofrece el sitio o por via telefonica,
       es importante que sepas,que tu experiencia nos preocupa, por lo tanto, en caso de que ocurra algún percanse con un guía puedes informarlo
       de inmediato con nosotros para tomar las medidas petinentes.
     </p>
 
-    <p class="w3-wide">turismo urbano</p>
-    <div class="w3-blue">
+    <!-- Primera barra de porcentaje  -->
+      <p class="w3-wide">turismo urbano</p>
+       <div class="w3-blue">
       <div class="w3-dark-grey" style="height:28px;width:95%"></div>
     </div>
+    <!-- segunda barra de porcentaje  -->
     <p class="w3-wide">turismo rural</p>
     <div class="w3-blue">
       <div class="w3-dark-grey" style="height:28px;width:85%"></div>
     </div>
-    <p class="w3-wide">senderismo</p>
+
+    <!-- tercera barra de porcentaje  -->
+  <p class="w3-wide">senderismo</p>
+  <!-- clase w3school para dar color -->
+  <!-- se crea la clase que va acontener nuestra
+  barra de informes  -->
     <div class="w3-blue">
       <div class="w3-dark-grey" style="height:28px;width:80%"></div>
     </div><br>
 
+<!-- En esta parte centramos el Contenido
+y los segmentamos en bloque por items -->
     <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <!-- Primer segmento -->
       <div class="w3-quarter w3-section">
         <span class="w3-xlarge">0+</span><br>
         me gusta
       </div>
+      <!-- segundo segmento -->
+
       <div class="w3-quarter w3-section">
         <span class="w3-xlarge">0+</span><br>
         comentarios
       </div>
+
+      <!-- Tercer  segmento -->
+
       <div class="w3-quarter w3-section">
         <span class="w3-xlarge">0+</span><br>
         favoritos
       </div>
+      <!-- Cuarto  segmento -->
+
       <div class="w3-quarter w3-section">
         <span class="w3-xlarge">0+</span><br>
         donaciones
       </div>
     </div>
-
+   <!-- Boton de descarga -->
     <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <i class="fa fa-download"></i> Download Resume
     </button>
 
-    <!-- Grid for pricing tables -->
+    <!--manejo de primer targeta con grid -->
 
     <div class="w3-row-padding" style="margin:0 -16px;position:absolute;width:500px;">
       <div class="w3-half w3-margin-bottom">
@@ -134,6 +172,7 @@ $datos=mysqli_fetch_array($consulta);
           </li>
         </ul>
       </div>
+      <!--manejo de segunda  targeta con grid -->
 
       <div class="w3-half">
         <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
@@ -153,22 +192,23 @@ $datos=mysqli_fetch_array($consulta);
       </div>
 
 
-    <!-- End Grid/Pricing tables -->
+    <!-- fin del contenedor de las tarjetas-->
     </div>
       </article>
+      <!-- Segundo articulo de contenido -->
 			<article id="tab2">
 				<h1 >Buscar paquetes</h1>
        <br><br><br><br>
     <!-- Aca se utilizo iframe para mostrar los paquetes -->
-
-
    <iframe src="mostrarpaquete.php" height="600" width="1189" id="mostar_paquetes" style="background:blue;" border></iframe>
 
 
         </center>
       </article>
+      <!-- Tercer articulo con contenido -->
 			<article id="tab3">
-				<h1> Mis sitios favoritos</h1><br><br><br>
+        <!-- Texto principal -->
+			<h1> Mis sitios favoritos</h1><br><br><br>
 
 <?php
 
@@ -189,7 +229,8 @@ while ($fetch=mysqli_fetch_array($consulta_f)) {
     <?php
   }
   ?>
-
+<!-- Se le da forma de carta a los
+paquetes creados -->
 <div class="w3-third w3-section">
 <div class="w3-card-4">
 <img src="img/banner/<?php echo $fetch['url_image'] ?>" style="width:100%">
@@ -197,7 +238,7 @@ while ($fetch=mysqli_fetch_array($consulta_f)) {
 <h4><?php echo $fetch['titulo']; ?></h4>
 <p><?php echo $fetch['descripcion']; ?></p>
 <center>
-  <!-- Button trigger modal -->
+  <!-- botom que lleva a la modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?php echo $fetch['id_paquete']; ?>">
   Añadir comentario
 </button>
@@ -263,13 +304,20 @@ while ($fetch=mysqli_fetch_array($consulta_f)) {
 
 
 			</article>
+      <!-- Ultimo articulo de contenido -->
 			<article id="tab4">
-
+        <!-- Contenedor  del formulario -->
         <div class="contenedor_registro_turista" id="cambiar_info2">
+          <!-- Caja de registro interno -->
         <div class="caja_registro" style="">
+          <!-- Se crea una clase form
+          para dar forma al formulario -->
         <div class="form__top">
+        <!-- Titulo del formulario interno  -->
+
 
      <div class="tilin" >  <h2><span class="t1">Cambiar mi información</span></h2><div>
+
          </div>
          <?php
             include 'conexion.php';
@@ -279,9 +327,12 @@ while ($fetch=mysqli_fetch_array($consulta_f)) {
             $rows=mysqli_fetch_array($query);
 
           ?>
+          <!-- Caja del formulario -->
+
          <form class="form__reg" action="codigo_actualizar.php" method="post">
 
         <input type="text" name="ced_turista" value="<?php echo $doc; ?>" hidden><br>
+        <!-- Campos de datos -->
 
 
         primer_nombre:   <input class="input" value="<?php echo $rows['nombre_turista_1']; ?>" name="nom_turista_1" type="text" placeholder="&#128100; Primer Nombre" required autofocus><br>
