@@ -384,9 +384,13 @@ paquetes creados -->
                  nueva_clave:<input class="input" name="pass_turista_1" type="password" placeholder="&#x1F512;  Contraseña" required><br><br>
                  comfirmar_clave:<input class="input" name="pass_turista_2" type="password" placeholder="&#x1F512;  Confirmar contraseña" required>
 
+                 <!-- Contenedor de botones del formulario -->
 
                  <div class="btn__form">
+                   <!-- Boton ingresar -->
+
                 <input class="btn__submit" name="actualizar_turista" type="submit" value="Actualizar">
+                  <!-- Botom Para limpiar formulario -->
                    <input class="btn__reset" type="reset" value="Limpiar">
                  </div>
          </form>
@@ -399,8 +403,9 @@ paquetes creados -->
 
 
 
-
+<!-- link de codigo  jquery minimizado  -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- link de  codigo bootstrap minimizado -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
