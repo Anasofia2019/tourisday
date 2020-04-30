@@ -1,5 +1,5 @@
 
-
+/* colores predeterminados del sitio */
 :root{
 
   --azul:#0076ff;
@@ -8,17 +8,8 @@
   --negro:#1F1E19;
   --verde:#00BEFD;
   --beich:#FEF9E7;
-
 }
-.body1{
-  background:var(--beich);
-}
-.body2{
-  background:var(--beich);
-}
-.body3{
-  background:var(--beich);
-}
+/* barra navegación */
 .navbar{
 
    position: absolute;
@@ -27,12 +18,13 @@
   width:  100%;
 }
 
-
+/* logo de la navbar */
 .contenedor_logo{
  position: relative;
   width: auto;
   height: auto;
 }
+/* contenedor del titulo del logo */
 .contenedor_logo #titulo_logo{
   position: absolute;
   margin-top:-75px;
@@ -41,6 +33,8 @@
   width: 300px;
   height: auto;
 }
+
+/* titulo del logo */
 .contenedor_logo #titulo_logo h1{
 
   color: var(--blanco);
@@ -49,12 +43,15 @@ font-size: 39px;
   font-style: normal;
   font-family:  Times, serif,"Times New Roman",;
 }
+/* contenedor botones del registro*/
 .contenedor_botones{
   position: relative;
   height: auto;
   width: auto;
  margin-left: 60%;
 }
+
+/* marco del drpdown de boton registro*/
 .dropbtn {
 margin-left:-40%;
 border-top-left-radius: 20%;
@@ -67,13 +64,14 @@ background-color:var(--verde);
   cursor: pointer;
 }
 
+/* hover del dropdown */
 .dropbtn:hover, .dropbtn:focus {
   background-color:var(--amarillo);
     transition: 1s;
 
 
 }
-
+/* boton dropdown */
 .dropdown {
 
 margin-top: 10px;
@@ -81,7 +79,7 @@ margin-top: 10px;
   position: absolute;
   display: inline-block;
 }
-
+/* contenedor desplegable del drpdown */
 .dropdown-content {
 margin-top: 1px;
   margin-left: -35%;
@@ -93,7 +91,8 @@ margin-top: 1px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
+/* elementos con etiquetas a
+dentro del contenedor desplegable */
 .dropdown-content a {
   margin-left: 1.5%;
   color: black;
@@ -101,17 +100,20 @@ margin-top: 1px;
   text-decoration: none;
   display: block;
 }
-
+/* dropdown hover */
 .dropdown a:hover{
   border-left: solid 3px var(--amarillo);
   border-bottom: solid 1px var(--amarillo);
 
 }
+/* links hover del dropdown */
 .dropdown a:hover {background-color: #ddd;}
 
+/* posicion de las etiquetas a
+dentro del dropdown */
 .show {display: block;}
 
-
+/* boton inicio de sesión */
 div a button{
   position: absolute;
   margin-left:45%;
@@ -127,6 +129,7 @@ div a button{
     border-bottom-right-radius: 20%;
 
 }
+/* hover del botom de inicio de sesión */
 div a button:hover{
 background-color: var(--amarillo);
 transition: 1s;
@@ -137,13 +140,13 @@ transition: 1s;
 /*informacion cental*/
 
 
+
+/* contenedor titulo del banner principal */
 .contenedor_titulo{
   position: relative;
   margin-top: 240px;
-
-
-
 }
+/* titulo del banner  */
 .contenedor_titulo h1{
 
   font-size: 34px;
@@ -157,6 +160,7 @@ transition: 1s;
 
 }
 
+/* segundo titulo del banner principal */
 .contenedor_titulo h2 {
   color: white ;
   margin-top:80px;
@@ -167,6 +171,7 @@ position: absolute;
 margin-left: 30%;
 }
 
+/* botom del banner principal  */
 #empezar{
     top: 440px;
   margin-left: 45%;
@@ -189,6 +194,8 @@ margin-left: 30%;
   color: white;
 
 }
+/* contenedor principal del banner
+se puede observar su opacidad */
 .contenedor_principal{
 
 background-image: linear-gradient(rgba(1, 1, 1, 0.8),var(--azul)), url("medellin.jpg");
@@ -199,6 +206,7 @@ background-image: linear-gradient(rgba(1, 1, 1, 0.8),var(--azul)), url("medellin
 
 }
 
+/* contenedor interno */
 
 .contenedor_banner{
   position: relative;
@@ -206,10 +214,12 @@ background-image: linear-gradient(rgba(1, 1, 1, 0.8),var(--azul)), url("medellin
   height: auto;
 
 }
+/* imagen del banner */
 .contenedor_banner img{
   margin-top:20px;
   margin-left: 25%;
 }
+/* iconos de redes sociales */
 .icon{
   color:white;
   text-decoration: none;
@@ -239,22 +249,23 @@ background-image: linear-gradient(rgba(1, 1, 1, 0.8),var(--azul)), url("medellin
 }
 
 
-
+/* contenedor textos de información
+roles */
 .contenedor_aviso1{
   position: relative;
 }
+/* imagenes de roles guia y turista */
 .contenedor_imagenes{
   position: absolute;
-
   display: inline-block;
 
 }
+/* imagen rol guia */
 .contenedor_aviso1 #contenedor_imagenes img{
   height: 200px;
   width: 350px;
-
-
 }
+/* imagen rol turista */
 
 .contenedor_aviso1 #contenedor_imagenes {
 width: 1200px;
@@ -262,29 +273,32 @@ margin-top: 20px;
 margin-left: 3.5%;
 }
 
-
+/* contenedor imagen 1 y 2 */
 .contenedor_aviso1 #contenedor_imagenes #imagen1{
    margin-left: 7%;
 }
 .contenedor_aviso1 #contenedor_imagenes #imagen2{
    margin-left: 2%;
 }
+/* boton direcciona registro guia */
 a #boton_guia{
   position: absolute;
   margin-top: -46px;
   margin-left: 18%;
 }
+/* boton direcciona registro turista  */
 a #boton_turista{
   position: absolute;
   margin-top: -46px;
   margin-left: 74%;
 }
+/* contenedor Textos turista y guia */
 .contenedor_textos1{
   position:relative;
   text-align: center;
   width: 900px;
 }
-
+/* titulo texto guia */
 .contenedor_textos1 #texto1{
   position:absolute;
   padding: 3px;
@@ -295,6 +309,8 @@ a #boton_turista{
   margin-left:10%;
   color: #2D2E2E;
 }
+/*titulo texto turista*/
+
 .contenedor_textos1 #texto2{
   position:absolute;
   padding: 3px;
@@ -305,7 +321,7 @@ a #boton_turista{
   width: 400px;
   color: #2D2E2E;
 }
-
+/* texto turista */
 .contenedor_textos1 #texto1 h3{
   font-weight: 900px;
 text-decoration: none;
@@ -320,6 +336,7 @@ font-size: 30px;
   font-size: 20px;
   color:var(--negro);
 }
+/* texto guia */
 .contenedor_textos1 #texto2 h3{
   font-weight: 900px;
 text-decoration: none;
@@ -335,7 +352,7 @@ font-size: 30px;
   color:var(--negro);
 
 }
-
+/* contenedor de iconos  */
 .contenedor_mision{
   position: relative;
   height: 450px;
@@ -343,6 +360,7 @@ font-size: 30px;
   margin-top: 100px;
   margin-left: 60%;
 }
+/* contenedor del texto de la misión */
 .contenedor_mision .contenedor_texto3{
   position:relative;
   height: 400px;
@@ -352,12 +370,16 @@ font-size: 30px;
   margin-left: -150%;
 
 }
+/* titulo misión */
 .contenedor_mision .contenedor_texto3 h3{
   font-size: 30px;
 }
+/* texto de la misión */
 .contenedor_mision .contenedor_texto3 p{
   font-size: 20px;
 }
+
+/* contenedor texto de la visión */
 .contenedor_mision .contenedor_texto4{
   position:relative;
   height: 400px;
@@ -367,12 +389,14 @@ font-size: 30px;
   margin-left: -70%;
 
 }
+/* diseño fuente de la visión */
 .contenedor_mision .contenedor_texto4 h3{
   font-size: 30px;
 }
 .contenedor_mision .contenedor_texto4 p{
   font-size: 20px;
 }
+/* contenedor del texto políticas  */
 .contenedor_mision .contenedor_texto5{
   position:relative;
   height: 400px;
@@ -382,44 +406,51 @@ font-size: 30px;
   margin-left: 5%;
 
 }
+/* titulo del texto de políticas */
 .contenedor_mision .contenedor_texto5 h3{
   font-size: 30px;
 }
+/* párrafo del texto políticas  */
 .contenedor_mision .contenedor_texto5 p{
   font-size: 20px;
 }
+/* contenedor de iconos de misión,visión,políticas  */
 .contenedor_mision .contenedorImagenesMision{
   margin-top: 250px;
   position: relative;
   height: 400px;
-width: auto;
+  width: auto;
   margin-left: -70%;
   border-radius: 12px;
 
 }
+/* imágenes del ser centrales */
 .contenedor_mision .contenedorImagenesMision img{
-height:200px;
-width: 400px;
-position: absolute;
-display:inline-block;
+   height:200px;
+   width: 400px;
+   position: absolute;
+   display:inline-block;
 }
 
-
+/* Imagen misión */
 .contenedor_mision .contenedorImagenesMision #imagen1{
   margin-left: 50%;
 position: absolute;
   margin-top: 50px;
 }
+/* imagen visión */
 .contenedor_mision .contenedorImagenesMision #imagen2{
   margin-left: -40%;
 position: absolute;
   margin-top: 60px;
 }
+/* imiagen políticas */
 .contenedor_mision .contenedorImagenesMision #imagen3{
  margin-left: 6%;
   position: absolute;
   margin-top: 69px;
 }
+/* barra de iconos redes sociales */
 .social-bar{
   display:flex;
   position: fixed;
@@ -443,6 +474,7 @@ position: absolute;
 margin-top: 200px;
 
 }
+/* contenedor del footer principal de tourist day */
 #footer .titulo_footer{
   position: relative;
   bottom: 150px;
@@ -450,19 +482,27 @@ margin-top: 200px;
 
 
 }
+/* titulo de touristday footer */
+
 #footer .titulo_footer h3{
   position: absolute;
     font-size: 45px;
 
 }
-
+/* footer bajo azul mas oscuro */
 #footer .footer-top{
   background: var(--azul);
   padding: 60px 0 30px 0;
 }
+/* información del footer bajo */
 #footer .footer-top .footer-info{
 margin-bottom: 30px;
 }
+
+/* en este caso estoy dando diseño a los
+titulos o parrafos de tipo h3 que se
+encuentran en el footer */
+
 #footer .footer-top .footer-info h3{
   font-size: 34px;
   margin: 0 0 20px 0;
@@ -475,6 +515,7 @@ margin-bottom: 30px;
   text-transform: uppercase;
 
 }
+/* parrafos del footer */
 #footer .footer-top .footer-info p{
   font-size: 13px;
 line-height: 24px;
@@ -482,6 +523,7 @@ margin-bottom: 0;
 font-family: arial,sans-serif;
 color: #ecf5ff;
 }
+/* links informativos de la pagina */
 #footer .footer-top .social-links a{
   font-size: 18px;
   display: inline-block;
@@ -495,11 +537,13 @@ color: #ecf5ff;
   height: 36px;
   transition: 0.3s;
 }
+
 #footer .footer-top .social-links a:hover{
   background: #0067d5;
   color: #fff;
 
 }
+/* textos h4 footer */
 #footer .footer-top h4{
   font-size: 14px;
   font-weight: bold;
@@ -509,14 +553,17 @@ color: #ecf5ff;
   padding-bottom: 10px;
 
 }
+/* contenedor social links de footer */
 #footer .footer-top .footer-links{
   margin-bottom:30px;
 }
+/* creamos una lista */
 #footer .footer-top .footer-links ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
+/* cada icono va dentro de las etiquetas li */
 #footer .footer-top .footer-links ul li{
   padding: 8px 0;
 
@@ -524,22 +571,26 @@ color: #ecf5ff;
 #footer .footer-top .footer-links ul li:first-child{
   padding-top: 0;
 }
+/* color de los links  */
 #footer .footer-top .footer-links ul a {
   color:#ecf5ff;
 }
 
-
+/* información de contacto */
 #footer .footer-top .footer-contact{
   margin-bottom: 30px;
 }
+
 #footer .footer-top .footer-newletter{
   margin-bottom: 30px;
 }
+
 #footer .footer-top .footer-newletter input[type="email"]{
   border: 0;
   padding: 8px;
   widows: 65%;;
 }
+/* diseño de input suscribe  */
 #footer .footer-top .footer-newletter input[type="submit"]{
 background: #007bff;
 border: 0;
@@ -553,23 +604,26 @@ cursor: pointer;
 #footer .footer-top .footer-newletter input[type="submit"]:hover{
   background: #0062cc;
 }
-
+ /* logo del footer tourist day */
 #footer .container #logo_footer{
   height: 250px;
   width: 300px;
 
 
 }
-
+/* copyright de creditos */
 #footer .copyright{
   text-align: center;
   padding-top: 20px;
 }
+/* creditos  */
 #footer .credits{
   text-align: center;
   font-size: 13px;
   color:#f1f7ff;
 }
+/* los creditos se organizados
+en etiquetas a  */
 #footer .credits a {
   color: #bfddfe;
 }
@@ -581,27 +635,29 @@ cursor: pointer;
 
 /* aca inicia el estilo del inicio de sesion*/
 
-
+/* logo principal */
 a #logo_inicio{
   position: absolute;
   height: 220px;
   width: 240px;
   margin-top: -75px;
 }
+/* caja del titulo principal */
 .contenedor_titulo_inicio{
   position: relative;
   color: var(--azul);
   margin-left: 16%;
   top:15px;
 
-
 }
+
+/* titulo del inicio se sesión */
 .contenedor_titulo_inicio h3{
     font-size: 40px;
   position: absolute;
 
 }
-
+/* contenedor inicio */
 .login__container {
  margin-top: 50px;
  max-width: 650px;
@@ -613,10 +669,11 @@ color:  black;
 
 }
 
-
+/* contenedor del logo del inicio de sesión */
 .login__top .contenedorLogoInicio{
   position: relative;
   }
+  /* logo de usuario inicio de sesión */
   .login__top .contenedorLogoInicio #logo_users{
     position: absolute;
     height: 180px;
@@ -625,6 +682,7 @@ color:  black;
    margin-left: 43px;
   }
 
+/* caja de inicio de sesión */
 .login__top {
   background-color: var(--azul);
   border-top: solid .5rem var(--amarillo);
@@ -639,9 +697,11 @@ color:  black;
   position: relative;
 
 }
+/* no tienes cuenta */
 .login__top #texto_cuenta{
   margin-top: -50px;
 }
+/* imagen de flecha volver */
 #volver img{
   position: absolute;
   margin-left: 10%;
@@ -650,15 +710,14 @@ color:  black;
   margin-top: -360px;
   border-radius:15px;
 }
-#volver #imagen:hover{
+/* hover con efectos flecha volver */
+  #volver #imagen:hover{
   background: var(--amarillo);
   transition: 1s;
 
-
 }
 
-
-
+/* formulario */
 .login__form {
   background: #004a99;
   display: flex;
@@ -667,6 +726,7 @@ color:  black;
   text-align: center;
 }
 
+/* diseño de todos los campos input */
 input[type=text], [type=password], [type=email], [type=number], [type=date] {
   margin: .4rem 0;
   padding: .5rem;
@@ -683,7 +743,7 @@ input[type=text]:focus, [type=password]:focus {
 
 }
 
-
+/* boton de envio en el inicio de sesión */
 .btn__submit {
 
   display:block;
@@ -703,7 +763,7 @@ position: absolute;
   text-decoration: none;
   top: 90%;
 }
-
+/* opcion recuperar contraseña */
 .form__recover:hover {
   color: white;
   font-size: 17px;
@@ -711,6 +771,7 @@ position: absolute;
 
 }
 
+/* diseño de botones en inicio de sesión */
 .input .btn__submit .btn__reset{
 
   background-color: red;
@@ -720,6 +781,8 @@ position: absolute;
   border-bottom: solid #009900 .2rem;
   transition: all .5s;
 }
+
+/* diseño de botones en inicio de sesión */
 
 .btn__submit , .btn__reset {
   width: 40%;
@@ -737,6 +800,7 @@ a #logoRegistroGuia{
   width: 240px;
   margin-top: -40px;
 }
+/* logo guia */
 a #imagen_guia{
   position: absolute;
   height: 220px;
@@ -747,11 +811,13 @@ a #imagen_guia{
 
 }
 
+/* caja del registro guia */
 .contenedorRegistroGuia{
   position: relative;
   margin-left: 10%;
   width: 700px;
 }
+/* caja de registro interna  */
 .contenedorRegistroGuia .caja_registro{
   margin-left: 60%;
 position: relative;
@@ -762,6 +828,9 @@ background:var(--azul);
 margin-bottom: 30px;
 border-bottom: solid .4rem  var(--amarillo) ;
 }
+
+
+/* formulario registro */
 .contenedorRegistroGuia .caja_registro .form__top{
 
 
@@ -773,12 +842,13 @@ border-bottom: solid .4rem  var(--amarillo) ;
   margin-bottom: 1rem;
 
 }
-
+ /* titulo registro guia */
 .contenedorRegistroGuia .caja_registro .form__top h2{
   font-weight: bold;
   color: #ffff;
   font-size: 18px;
 }
+/* diseño botones del registro guia */
 .contenedorRegistroGuia .caja_registro .form__top .btn__form .btn__submit{
 
   background: var(--verde);
@@ -787,10 +857,11 @@ border-bottom: solid .4rem  var(--amarillo) ;
   border-top-left-radius: 20%;
   border-bottom-right-radius: 20%;
 }
-
+/* hover */
 .contenedorRegistroGuia .caja_registro .form__top .btn__form .btn__submit:hover{
   background: var(--amarillo);
 }
+/* botones submit recet */
 .contenedorRegistroGuia .caja_registro .form__top .btn__form .btn__reset{
 font-size: 20px;
   background: var(--verde);
@@ -804,12 +875,15 @@ font-size: 20px;
   border-bottom-right-radius: 20%;
 
 }
+/* botones hover */
 .contenedorRegistroGuia .caja_registro .form__top .btn__form .btn__reset:hover{
   background: var(--amarillo);
 }
+/* botom recet */
 .contenedorRegistroGuia .caja_registro .btn__form{
   margin-top: -20px;
 }
+/* flecha regresar registro guia */
 #regresar img{
   position: absolute;
   margin-left: -120%;
@@ -825,6 +899,7 @@ font-size: 20px;
 
 
 }
+/* texto de que dirije al formulario turista */
 #textoCuentaGuia{
   margin-top: -5px;
   font-size: 16px;
@@ -839,12 +914,14 @@ color:var(--azul);
 margin-left:16%;
 top:48px;
 }
+
+
+/* titulo del registro turista */
 .contenedor_titulo_r_turista h3{
   position: absolute;
   font-size: 45px;
 }
-
-
+/* formulario turista */
 .form__top_turista {
 text-align: center;
 margin-left: 40%;
@@ -859,19 +936,20 @@ border-bottom: solid .4rem var(--amarillo) ;
 border-top: solid .4rem var(--amarillo) ;
 
 }
-
+/* titulo interno del formulario turista */
 .form__top_turista h2 {
   font-weight: bold;
   color: #ffff;
   font-size: 20px;
 }
+/* caja botones formulario turista */
 .btn__form_turista {
   display: flex;
   justify-content: space-around;
   margin-top: 1rem;
 
 }
-
+/* diseño de botones registro turista */
 .form__top_turista .btn__form .btn__reset{
   font-size: 20px;
     background: var(--verde);
@@ -884,9 +962,12 @@ border-top: solid .4rem var(--amarillo) ;
     border-bottom-right-radius: 20%;
     transition:1s;
 }
+/* hover botones */
 .form__top_turista .btn__form .btn__reset:hover{
   background: var(--amarillo)
 }
+
+/* botom recet */
 .form__top_turista .btn__form .btn__submit{
   background: var(--verde);
   font-size: 20px;
@@ -898,6 +979,7 @@ border-top: solid .4rem var(--amarillo) ;
 
 
 }
+/* hover */
 .form__top_turista .btn__form .btn__submit:hover{
   background: var(--amarillo)
 }
@@ -906,18 +988,18 @@ border-top: solid .4rem var(--amarillo) ;
 
 
 
-
+/* color de los h2 */
 h2 span {
   color:#ffff;
 }
-
+/* formularos estandar */
 .form__reg {
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
+/* botones de formulario estandar */
 .btn__form {
   display: flex;
   justify-content: space-around;
@@ -925,14 +1007,14 @@ h2 span {
 }
 
 
-
-
+/* todos los input incluiran este diseño */
+input al
 .input:focus {
   border-bottom: solid var(--amarillo) .2rem;
 }
 
 
-
+/* boton de recet estandar */
 .btn__reset {
   height: 40px;
   background-color: #00b300;
@@ -948,15 +1030,15 @@ h2 span {
   background-color:   #1aff1a;
 }
 
-
+ /* caja principal de información  */
 .wrap{
 margin-left: 30%;
   width: 2000px;
   max-width: 90%;
   margin: 30px auto;
 }
+/* esconder hover */
 .crearp:hover{
-
-  border-radius:4px;
+ border-radius:4px;
   width: 100px;
 }

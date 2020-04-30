@@ -1,5 +1,16 @@
+<!-- tourist day es un sitio web
+que permite a registrar usuarios turistas
+con el fin de visualizar información y fotos
+que insertan a la plataforma otros usuarios guias
+no obstante si al turista le
+agrada el sitio se comunica con el
+a travéz de la información dada -->
+
+
+
+
 <!DOCTYPE html>
-<!-- es importante tener en cuenta que el contenido de esta pagina
+<!-- es importante tener en cuenta que el contenido de esta página
 hace parte del mismo index -->
 <html lang="en">
 </style>
