@@ -231,6 +231,7 @@ recet */
   border-top:solid var(--verde);
   border-left:solid var(--verde);
 }
+/* hover botom submit tab 4 recet */
 .secciones #tab4 #cambiar_info2{
   background: #489cd3 ;
   padding: 30px;
@@ -242,10 +243,12 @@ recet */
   border-bottom: 10px solid var(--verde);
 
 }
+/* diseño de input y select del tab 4 cambiar información  */
 .secciones #tab4 #cambiar_info2 input,select{
 
   margin: 5px;
 }
+/* título de tab de inicio */
 .secciones #tab1 h1{
 position: absolute;
 margin-left: 30%;
@@ -256,6 +259,7 @@ font-weight: 100;
 color:   #2f4a57;
 
 }
+/* parrafo tab de inicio */
 .secciones #tab1 p{
 text-align: center;
 margin-top: 140px;
@@ -264,6 +268,8 @@ color:#2f4a57;
 font-size: 20px;
 font-weight: 600;
 }
+
+/* tab inicio pooster turista */
 .secciones #tab1 #poster{
   position: absolute;
   width: 400px;
@@ -271,12 +277,14 @@ font-weight: 600;
   margin-left: -10%;
   margin-top: 20px;
 }
+/* segundo pooster turista */
 .secciones #tab1 #mapa_guia{
   width: 300px;
   height: 300px;
   margin-left: 40%;
   margin-top: -20px;
 }
+/* título del mapa turista */
 .secciones #tab1 #titulo_mapa{
   position: absolute;
   color: var(--azul);
@@ -285,6 +293,7 @@ font-weight: 600;
   margin-left: 50%;
   font-weight: 50;
 }
+/* título de tab paquetes turista */
 .secciones #tab2 h1{
 text-align: center;
 position: static;
@@ -294,12 +303,13 @@ font-family: verdana;
 font-size:50px;
 
 }
+/* diseño de iframe paquetes  */
 .secciones #tab2 iframe{
   margin-left: 10%;
   width: 820px;
 
 }
-
+/* titulo de tab favoritos */
 .secciones #tab3 h1{
 text-align: center;
 position:static;
@@ -307,12 +317,14 @@ margin-left: 5%;
 font-family: verdana;
 margin-top:40px;
 }
+/* titulo de tab cambiar información */
 .secciones #tab4 h1{
   text-align: center;
   position: absolute;
   margin-left: 30%;
 }
 
+/* tamaño de thumnails   */
 @media screen and (max-width: 700px){
 	ul.tabs li{
 		width: none;
@@ -326,14 +338,16 @@ margin-top:40px;
 		padding: 15px 0px;
 	}
 
+ /* posicisión de tabs */
 	ul.tabs li a .tab-text{
 		display: none;
 	}
-
+  /* articulos de contenido */
 	.secciones article{
 		padding: 20px;
 	}
 
+ /* Podemos ver que empieza el footer */
   #footer{
     background:#1E67AB;
     padding: 0 0 30px 0;
@@ -343,13 +357,17 @@ margin-top:40px;
 
   }
 
+/* este es la caja de contenido dentro del footer */
   #footer .footer-top{
     background: var(--azul);
     padding: 60px 0 30px 0;
   }
+  /* caja de información dentro de la caja de
+  contenido */
   #footer .footer-top .footer-info{
   margin-bottom: 30px;
   }
+  /* textos de tipo h3 dentro del footer */
   #footer .footer-top .footer-info h3{
     font-size: 34px;
     margin: 0 0 20px 0;
@@ -362,6 +380,7 @@ margin-top:40px;
     text-transform: uppercase;
 
   }
+  /* parrafo de información dentro del footer */
   #footer .footer-top .footer-info p{
     font-size: 13px;
   line-height: 24px;
@@ -369,6 +388,7 @@ margin-top:40px;
   font-family: arial,sans-serif;
   color: #ecf5ff;
   }
+  /* iconos social link */
   #footer .footer-top .social-links a{
     font-size: 18px;
     display: inline-block;
@@ -382,11 +402,14 @@ margin-top:40px;
     height: 36px;
     transition: 0.3s;
   }
+  /* efecto hover en los iconos */
   #footer .footer-top .social-links a:hover{
     background: #0067d5;
     color: #fff;
 
   }
+  /* textos h4 dentro del contenido footer
+  en general */
   #footer .footer-top h4{
     font-size: 14px;
     font-weight: bold;
@@ -396,32 +419,40 @@ margin-top:40px;
     padding-bottom: 10px;
 
   }
+
+  /* contenedor lista de links del sitio footer */
   #footer .footer-top .footer-links{
     margin-bottom:30px;
   }
+  /* lista de links preferenciales */
   #footer .footer-top .footer-links ul{
     list-style: none;
     padding: 0;
     margin: 0;
   }
+  /* cada componente de la lista de links */
   #footer .footer-top .footer-links ul li{
     padding: 8px 0;
 
   }
+  /* caja hija del footer */
   #footer .footer-top .footer-links ul li:first-child{
     padding-top: 0;
   }
+  /* lista del links del sitio footer  */
   #footer .footer-top .footer-links ul a {
     color:#ecf5ff;
   }
 
-
+ /* caja Información de contactos footer */
   #footer .footer-top .footer-contact{
     margin-bottom: 30px;
   }
+  /* caja de  cajas de texto footer */
   #footer .footer-top .footer-newletter{
     margin-bottom: 30px;
   }
+/* diseño de input de tipo email   */
   #footer .footer-top .footer-newletter input[type="email"]{
     border: 0
     padding:6px 8px;
