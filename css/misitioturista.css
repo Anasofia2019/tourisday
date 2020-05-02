@@ -427,6 +427,7 @@ margin-top:40px;
     padding:6px 8px;
     width: 65%;
   }
+  /* input footer bajo */
   #footer .footer-top .footer-newletter input[type="submit"]{
   background: #007bff;
   border: 0;
@@ -437,30 +438,35 @@ margin-top:40px;
   transition: 0.3s;
   cursor: pointer;
   }
+  /* input suscripción footer */
   #footer .footer-top .footer-newletter input[type="submit"]:hover{
     background: #0062cc;
   }
-
+  /* logo del footer de la pagina */
   #footer .container #logo_footer{
     height: 250px;
     width: 300px;
 
 
   }
-
+ /* derechos de autor footer  */
   #footer .copyright{
     text-align: center;
     padding-top: 20px;
   }
+  /* creditos dentro del footer
+  en lista */
   #footer .credits{
     text-align: center;
     font-size: 13px;
     color:#f1f7ff;
     position: fixed;
   }
+  /* links de creditos */
   #footer .credits a {
     color: #bfddfe;
   }
+  /* hover de cada credito */
   #footer .credits a:hover{
     color: #f1f7ff;
   }
