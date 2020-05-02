@@ -1,3 +1,4 @@
+/* declaración de colores de la pagina */
 :root{
 
   --azul:#0076ff;
@@ -8,6 +9,7 @@
 
 }
 
+/* diseño documento en general */
 
 *{
 	margin: 0;
@@ -17,6 +19,7 @@
 	box-sizing: border-box;
 }
 
+/* boton de salida o configuración */
 .dropbtn {
   background-color: var(--azul);
   color: white;
@@ -26,12 +29,13 @@
   margin-top: 4px;
 
 }
-
+/* le damos una posición al dropdown */
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
+/* caja del contenido
+desplegable  */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -41,13 +45,16 @@
   z-index: 1;
   margin-top:1px;
 }
-
+/* etiquetas a que
+encuentran dentro de la
+caja desplegable */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
+/* transiciones y efectos al pasar mouse */
 
 .dropdown-content a:hover {background-color: #ddd;}
 
@@ -55,11 +62,14 @@
 
 .dropdown:hover .dropbtn {background-color: var(--amarillo);}
 
+/* contenedor articulo  de contenidos*/
+
 .contenedor_articulo2{
   position: fixed;
   height: auto;
   width: auto;
 }
+/* articulo principal  */
 .contenedor_articulo2 #articulo_2{
   position: fixed;
   height: 500px;
@@ -68,11 +78,13 @@
   background: #fff;
   margin-top: -400px;
 }
-.contenedor_articulo2 #articulo_2 img{
+/* imagen de articulo principal turista */
+ .contenedor_articulo2 #articulo_2 img{
   position: fixed;
   height: 600px;
   width: 300px
 }
+/* segundo banner  */
 #myInput {
   position: absolute;
     padding: 20px;
@@ -85,9 +97,9 @@ body{
 	background:#ffffff ;
 	font-family: 'Open sans';
 }
-
+/* mostrar en bloque */
 .show {display: block;}
-
+/* desplegable  */
 .wrap{
   width: 850px;
   padding: none;
@@ -95,7 +107,7 @@ body{
   margin-left: 17%;
   position: relative;
 }
-
+/* mostrar en bloque */
 ul.tabs{
   position: fixed;
   margin-top: -30px;
@@ -108,11 +120,11 @@ ul.tabs{
 
 
 }
-
+/* cada componente lista dropdown */
 ul.tabs li{
 	width: 20%;
 }
-
+/* cada link de menu desplegable dropdown */
 ul.tabs li a{
 
 	color: #fff;
@@ -124,15 +136,19 @@ ul.tabs li a{
   font-family: arial,sans-serif;
 
 }
+/* boton active que le da boton
+a cada tab al dar click en
+cualquiera de los elementos
+de la barra de opciones */
 
 .active{
 	background: var(--amarillo);
 }
-
+/* contenedor de caja dropdown */
 ul.tabs  li a .tab-text{
 	margin-left: 8px;
 }
-
+/* secciones que contienen sub modulos */
 .secciones{
 	width: 120%;
 	background: #fff;
@@ -141,38 +157,47 @@ ul.tabs  li a .tab-text{
 
 
 }
-
+/* articulo dentro de las secciones
+que tienen contenido */
 .secciones article{
 	padding: 30px;
 
 }
-
+/* parrafo general de las secciones */
 .secciones article p{
 	text-align: justify;
 }
+/* tab de inicio turista */
 .secciones #tab1{
   background: #f9f194;
 }
+/* segundo tab es decir paquetes  */
 .secciones #tab2{
   background: #f9f194;
 
 }
+/* tab 3 de favoritos */
 .secciones #tab3{
   background: #f9f194;
 
 }
+/* tab 4 de cambiar información */
 .secciones #tab4{
   background: #f9f194;
 
 
 }
+/* caja de cambiar info tab 4 */
 .secciones #tab4  #cambiar_info2{
 margin-top: 100px;
 
 }
+/* tab 4 de cambiar info */
 .secciones #tab4 {
   height: 570px;
 }
+/* botom formulario de tab 4
+cambiar info submit */
 .secciones #tab4 #boton_cambio{
   background: var(--amarillo);
   border-top:solid var(--amarillo);
@@ -181,6 +206,8 @@ margin-top: 100px;
   border-radius: 10px;
 
 }
+/* botom formulario de tab 4
+recet */
 
 .secciones #tab4 #boton_cambio2{
   background: var(--amarillo);
@@ -190,13 +217,14 @@ margin-top: 100px;
   border-radius: 10px;
 
 }
+/* boton submit hover */
 .secciones #tab4 #boton_cambio:hover{
   transition: 1s;
   background: var(--verde);
   border-top:solid var(--verde);
   border-left:solid var(--verde);
 }
-
+/* hover botom submit tab 4 cambiar info */
 .secciones #tab4 #boton_cambio2:hover{
   transition: 1s;
   background: var(--verde);
@@ -436,6 +464,7 @@ margin-top:40px;
   #footer .credits a:hover{
     color: #f1f7ff;
   }
+  /* inicio del banner turista */
   #tab1 .banner_turista{
     width: 900px;
     height: 200;
@@ -443,9 +472,11 @@ margin-top:40px;
 
   /*  empi   */
   .w3-row-padding img {margin-bottom: 12px;}
-/* Set the width of the sidebar to 120px */
+/*
+Establece el ancho de la barra lateral en 120px */
 .w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+/* Agregue un margen izquierdo al "contenido de la página" que coincida con el ancho de la barra lateral (120 px) */
 #main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
+/*
+contenido de la página "en pantallas pequeñas */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
