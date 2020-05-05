@@ -1,10 +1,22 @@
 ﻿<?php
+  //Se incluye la coneccion
 include 'conexion.php';
+
+  //iniciamos la seccion en la pagina
 session_start();
 
+  //usamos la variable superglobalr "$_SESSION" para saber si esta iniciada en el turista
 if (isset($_SESSION['turista'])) {
+  //Si esta iniciada se procede a mostrar toda la pagina del guia
+ 
+
+  //La Variable super global tomó el valor de la cedula del turista, "$cedula" toma el valor de la variable super global para realizar consultas mas adelante
   $cedula=$_SESSION['turista'];
+
+  // Esta consulta es para traer todos los datos de un guia 
   $consulta=mysqli_query($conexion,"SELECT * FROM tbl_turistas WHERE documento_turista='$cedula'");
+
+  //$datos toma toda fila de datos del guia (Cedula, nombres, apellidos, residencia, entre otros)
 $datos=mysqli_fetch_array($consulta);
 ?>
 <html lang="en" dir="ltr">
@@ -212,17 +224,24 @@ y los segmentamos en bloque por items -->
 
 <?php
 
+//Esta consulta se realiza para traer todos los paquetes adquiridos por el turista
 $consulta_f=mysqli_query($conexion,"SELECT id_paquete,cedula,titulo,descripcion,url_image,id_paquetes,doc_turista FROM tbl_paquetes INNER JOIN tbl_historial_adquirido WHERE doc_turista='$cedula' AND id_paquete=id_paquetes") or die ('error en la consulta');
+
+//Esta variable hace un conteo de todos los paquetes
 $num_rows=mysqli_num_rows($consulta_f);
+
+//Si hay paquetes entonces se procede a mostrarlos
 if ($num_rows>0) {
 
-
+//Variable para finalizar el while
 $i=1;
 ?>
 
 <?php
+//Mientras la variable "$fetch" tome nuevos datos entonces se sigue ejecutando el mientras y se siguen mostrando los paquetes adquiridos
 while ($fetch=mysqli_fetch_array($consulta_f)) {
 
+//Esta condicion las organiza de a 3 por fila
   if ($i % 3==0 or $i==1) {
     ?>
 <div class="w3-row-padding w3-theme">
@@ -253,6 +272,7 @@ paquetes creados -->
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <!-- Este form envía los datos a la pagina para la puntuacion y comentario de un paquete ya adquirido -->
       <form method="post" action="codigo_paquete.php">
           <div class="modal-body">
             <input type="hidden" name="ced_t" value="<?php echo $cedula; ?>">
