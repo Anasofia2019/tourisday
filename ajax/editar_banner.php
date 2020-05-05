@@ -1,4 +1,5 @@
 <?php
+/*Pagina donde se manda el formulario para validar los campos y poder agregar, editar o eliminar los datos*/
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["titulo"])){

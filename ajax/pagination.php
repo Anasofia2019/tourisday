@@ -1,4 +1,5 @@
 <?php
+/*Esta pagina  es para la paginacion de la parte para la pagina de listar los paquetes*/
 function paginate($reload, $page, $tpages, $adjacents) {
 	$prevlabel = "&lsaquo; Prev";
 	$nextlabel = "Next &rsaquo;";

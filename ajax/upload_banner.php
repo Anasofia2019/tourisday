@@ -1,4 +1,6 @@
 ﻿<?php
+/*Esta pagina  actualiza y elimina el producto, al igual que comprueba el tamaño, el tipo de la imagen y tambien si e real
+o no cuya imagen */
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUpload"]["type"])){
 /* Llamar la Cadena de Conexion*/
 include ("../conexion.php");

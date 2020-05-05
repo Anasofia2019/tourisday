@@ -1,4 +1,5 @@
 ﻿<?php
+/*Pagina  que elimina  datos, tambien incluye la paginacion  */
 session_start();
 /* Llamar la Cadena de Conexion*/
 include ("../conexion.php");

@@ -1,4 +1,5 @@
 ﻿<?php
+/*Esta pagina es el perfil del guia donde puede editar la informacion, visualizar paquetes ya añadidos y añade los paquetes*/
 include 'conexion.php';
 
 session_start();
@@ -253,7 +254,10 @@ nuestros tabs en el modulo guia  -->
 <script>
 	$(document).ready(function(){
 		load(1);
-	});
+  });
+  /**
+ * @param page
+ */
 	function load(page){
     //funcion que envia a banner_ajax para cargar la pagina
 		var parametros = {"action":"ajax","page":page};
@@ -268,9 +272,13 @@ nuestros tabs en el modulo guia  -->
 				$("#loader").html("");
 			}
 		})
-	}
+  }
+  //funcion que envia a banner_ajax para eliminar datos
+  /**
+ * @param id
+ */
 	function eliminar_slide(id){
-    //funcion que envia a banner_ajax para eliminar datos
+    
 		page=1;
 		var parametros = {"action":"ajax","page":page,"id":id};
 		if(confirm('Esta acción  eliminará de forma permanente  \n\n ¿Desea continuar?')){

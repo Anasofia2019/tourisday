@@ -1,4 +1,7 @@
-<?php
+ <?php
+/*
+Esta pagina es para crear los paquetes, se llena el formulario y se sube la imagen del lugar
+*/
 session_start();
 $title="Agregar paquete";
 /* Llamar la Cadena de Conexion*/
@@ -178,6 +181,12 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
   </body>
 </html>
 	<script>
+	/**
+ * @var id_banner
+ * @var inputFileImage
+ * @var file
+ * @var data
+ */
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
@@ -207,6 +216,9 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 			}
 //funcion que muestra si la imagen es permitida o no
 //tambien permite eliminar
+/**
+ * @param id
+ */
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
@@ -221,6 +233,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 							}
 						})
 
+
 				}
 
 
@@ -230,6 +243,11 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 	</script>
 
   <script>
+/**
+ * @param e
+ */
+
+  	
   //funcion que envia a editar_banner para actualizar datos
 		$("#editar_banner").submit(function(e) {
 

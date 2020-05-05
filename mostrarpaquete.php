@@ -1,4 +1,7 @@
 ﻿<?php
+/*
+Aca se visualiza los paquetes que fueron creados desde la parte del turista 
+*/
 include("conexion.php");
 session_start();
 if (isset($_SESSION['turista'])) {
@@ -171,7 +174,13 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 </html>
 <script>
   //funcion para mostrar si carga la imagen
-			function upload_image(){
+/**
+ * @var id_banner
+ * @var inputFileImage
+ * @var file
+ * @var data
+ */
+  function upload_image(){
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
 				var inputFileImage = document.getElementById("fileToUpload");
@@ -199,8 +208,13 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 
 			}
 
+	//Funcion para eliminar
+	/**
+ * @param id
+ * @var parametros
+  */		
 			function eliminar(id){
-        //Funcion para eliminar
+        
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
 							url:'ajax/upload2.php',
@@ -223,6 +237,9 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 	</script>
 	<script>
   //funcion que envia a editar_banner para actualizar datos
+  /**
+ * @param e
+ */
 		$("#editar_banner").submit(function(e) {
 
 			  $.ajax({

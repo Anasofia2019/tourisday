@@ -1,4 +1,6 @@
 <?php
+/*Esta pagina  actualiza y elimina el producto, al igual que comprueba el tamaño, el tipo de la imagen y tambien si e real
+o no cuya imagen */
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUpload"]["type"])){
 /* Llamar la Cadena de Conexion*/
 include ("../../config/conexion.php");
@@ -82,7 +84,7 @@ if (isset($messages)){
 	</div>
 	<?php
 }
-$query_images=mysqli_query($conexion,"select * from images where id_producto='$id_producto'");
+$query_images=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete ='$id_producto'");
 while ($rw_images=mysqli_fetch_array($query_images)){
 	$url=$rw_images['url'];
 	$id_image=$rw_images['id_image'];
