@@ -1,6 +1,11 @@
 ﻿<?php
+//Se incluye la conexion
 include("conexion.php");
+
+//Se inicia una seccion
 session_start();
+
+//Se valida si hay una seccion para el turista para mostrar los paquetes
 if (isset($_SESSION['turista'])) {
 
 ?>
@@ -46,25 +51,35 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 
 
 				}
+				//Este boton es para adquirir un paquete, el boton esta en esta misma pagina
 				if (isset($_POST['btn_reservar'])) {
+
+
+	//id del paquete
 	$id_paquete=$_POST['reserva'];
+
+	//documento del turista
 	$docu_tu=$_POST['doc_t'];
 
-	echo $id_paquete;
-	echo $docu_tu;
-
+	//Esta consulta coge todos los paquetes que a adquirido el turista
 	$consulta_v=mysqli_query($conexion,"SELECT * FROM tbl_historial_adquirido WHERE id_paquetes='$id_paquete'") or die ("error");
+
+
+	//cuenta los paquetes adquiridos
 	$cont=mysqli_num_rows($consulta_v);
-	echo $cont;
+
+	//si no hay un paquete registrado con el id que se trajo al querer adquirir uno, entonces se puede registrar. Esto se hace para que no se dupliquen los datos en la tabla del historial de paquetes adquiridos por el turista 
 	if ($cont==0) {
 
+		//Se hace la insercion en la base de datos 
 	$insert= mysqli_query($conexion,"INSERT INTO tbl_historial_adquirido(id_paquetes,doc_turista) VALUES ($id_paquete,$docu_tu)") or die ("<script>alert('Error al Reservar');</script>");
+
 	echo "<script>alert('Paquete reservado de forma exitosa');</script>";
-	// echo "<script>window.location='misitioturista.php'</script>";
+	echo "<script>window.location='misitioturista.php'</script>";
 	}
 	else{
 		echo "<script>alert('El paquete fue reservado con anterioridad');</script>";
-		// echo "<script>window.location='misitioturista.php'</script>";
+		echo "<script>window.location='misitioturista.php'</script>";
 	}
 }
 			?>

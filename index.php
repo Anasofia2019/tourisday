@@ -1,11 +1,21 @@
 <?php
+  //Se inicia una seccion para saber si alguno de los roles ha ingresado
 session_start();
+  
+  //Usamos la variable superglobar "$_SESSION" para ver si esta variable esta iniciada en el guia
 if (isset($_SESSION['guia'])) {
+  // Si la variable se inició en el guia, entonces se le redirecciona a su pagina
   echo "<script>window.location='misitioguia.php';</script>";
   echo "<script>alert('iniciando seccion');</script>";
+
+
+  //Usamos la variable superglobar "$_SESSION" para ver si esta variable esta iniciada en el turista
 }elseif(isset($_SESSION['turista'])){
+  // Si la variable se inició en el turista, entonces se le redirecciona a su pagina
   echo "<script>window.location='misitioturista.php';</script>";
   echo "<script>alert('iniciando seccion');</script>";
+
+  //Si no se cumple ninguna condicion de los roles, se muesta la pagina inical que se le mostaría a una persona que no ha iniciado seccion
 }else{
   ?>
 
@@ -62,8 +72,8 @@ if (isset($_SESSION['guia'])) {
  </div>
   </nav>
 </header>
+  <!-- De esta manera se modula  la pagina, "indec.php" es solo el header, el resto de la pagina que es "informacion.php" se muestra en un div -->
 <div>
-
   <?php
   if(@ $_GET['mod']=="")
     {

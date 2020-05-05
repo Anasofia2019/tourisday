@@ -1,10 +1,21 @@
 <?php
+//Se inicia una seccion para saber si alguno de los roles ha ingresado
 session_start();
+
+//Usamos la variable superglobar "$_SESSION" para ver si esta variable esta iniciada en el guia
 if (isset($_SESSION['guia'])) {
-  echo "<script>window.location='misitioguia.php';</script>";
+
+  // Si la variable se inició en el guia, entonces se le redirecciona a su pagina
   echo "<script>alert('iniciando sesión');</script>";
+  echo "<script>window.location='misitioguia.php';</script>";
+
+  //Usamos la variable superglobar "$_SESSION" para ver si esta variable esta iniciada en el turista
 }elseif(isset($_SESSION['turista'])){
+// Si la variable se inició en el turista, entonces se le redirecciona a su pagina
+  echo "<script>alert('iniciando sesión');</script>";
   echo "<script>window.location='misitioturista.php';</script>";
+
+//Si no se cumple ninguna condicion de los roles, se muesta la pagina del registro para guias
 }else{
   ?>
 <html lang="en" >

@@ -1,16 +1,25 @@
 ﻿<?php
+  //Se incluye la coneccion
 include 'conexion.php';
 
+  //iniciamos la seccion en la pagina
 session_start();
 
 
 $active_config="active";
 $active_banner="active";
 
+  //usamos la variable superglobalr "$_SESSION" para saber si esta iniciada en el guia
 if (isset($_SESSION['guia'])) {
+  //Si esta iniciada se procede a mostrar toda la pagina del guia
+
+  //La Variable super global tomó el valor de la cedula del guia, "$c_guia" toma el valor de la variable super global para realizar consultas mas adelante
   $c_guia= $_SESSION['guia'];
 
+  // Esta consulta es para traer todos los datos de un guia 
   $consulta= mysqli_query($conexion,"SELECT * FROM tbl_guias WHERE cedula='$c_guia'");
+
+  //$datos toma toda fila de datos del guia (Cedula, nombres, apellidos, residencia, entre otros)
   $datos= mysqli_fetch_array($consulta);
   ?>
 <html lang="en" dir="ltr">
@@ -102,7 +111,10 @@ nuestros tabs en el modulo guia  -->
 				<h2 id="titulo_paquete">Mis paquetes</h2>
 
         <?php
+        //Esta consulta trae todos los paquetes que subió el guia que inició sección
         $paquetes=mysqli_query($conexion,"SELECT * FROM tbl_paquetes WHERE cedula='$c_guia'");
+
+        //Esta variable cuenta los paquetes que tiene el guia
         $cont=mysqli_num_rows($paquetes);
         $i=0;
         ?>
@@ -120,12 +132,10 @@ nuestros tabs en el modulo guia  -->
 
 
         <?php
-
+        //este mientras muestra los paquetes uno a uno hasta que "$i" llegue al mismo numero que "$cont" Que es la cantidad de paquetes que tiene el guia
         while ($cont>$i) {
           $rowss=mysqli_fetch_array($paquetes);
           ?>
-          <!-- Este div es el de los cuadritos azules que usted quiere poner pero hay que organizarlo. Te amo mi amor <3 -->
-
 
 
 <!-- Modal -->
