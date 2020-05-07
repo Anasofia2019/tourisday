@@ -247,7 +247,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
  * @param e
  */
 
-  	
+
   //funcion que envia a editar_banner para actualizar datos
 		$("#editar_banner").submit(function(e) {
 

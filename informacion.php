@@ -4,7 +4,7 @@ con el fin de visualizar información y fotos
 que insertan a la plataforma otros usuarios guias
 no obstante si al turista le
 agrada el sitio se comunica con el
-a travéz de la información dada -->
+a través de la información dada -->
 
 
 
