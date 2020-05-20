@@ -3,9 +3,9 @@
 /*
 Aca se visualiza los paquetes que fueron creados desde la parte del turista
 */
-=======
+
 //Se incluye la conexion
->>>>>>> 2fbd6426def8873f0f2f1ee9cf027c2880e4acea
+//>>>>>>> 2fbd6426def8873f0f2f1ee9cf027c2880e4acea
 include("conexion.php");
 
 //Se inicia una seccion

@@ -1,6 +1,5 @@
 ﻿<?php
 /*Esta pagina es el perfil del guia donde puede editar la informacion, visualizar paquetes ya añadidos y añade los paquetes*/
-=======
   //Se incluye la coneccion
 include 'conexion.php';
 
@@ -113,7 +112,8 @@ nuestros tabs en el modulo guia  -->
 				<h2 id="titulo_paquete">Mis paquetes</h2>
 
         <?php
-        //Esta consulta trae todos los paquetes que subió el guia que inició sección
+        
+        //Esta consulta trae todos los paquetes que subió el guia que inició sesión
         $paquetes=mysqli_query($conexion,"SELECT * FROM tbl_paquetes WHERE cedula='$c_guia'");
 
         //Esta variable cuenta los paquetes que tiene el guia
@@ -235,7 +235,7 @@ nuestros tabs en el modulo guia  -->
             <!-- Contenedor de botones del formulario -->
                  <div class="btn__form">
                    <!-- Boton actualizar -->
-                <input class="btn__submit" name="actualizar_guia" type="submit" value="Actializar" id="boton1">
+                <input class="btn__submit" name="actualizar_guia" type="submit" value="Actualizar" id="boton1">
                  <!-- Boton de limpiar -->
                    <input class="btn__reset" type="reset" value="Limpiar" id="boton1">
                  </div>
@@ -273,12 +273,12 @@ nuestros tabs en el modulo guia  -->
     //funcion que envia a banner_ajax para cargar la pagina
 		var parametros = {"action":"ajax","page":page};
 		$.ajax({
-			url:'./ajax/banner_ajax.php',
-			data: parametros,
-			 beforeSend: function(objeto){
+			url:'./ajax/banner_ajax.php', // URL a la que se envía la solicitud
+			data: parametros,  // Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
+			 beforeSend: function(objeto){ //metodo o funcion para gif animados con una imagen de precarga
 			$("#loader").html("<img src='../img/ajax-loader.gif'>");
 		  },
-			success:function(data){
+			success:function(data){ // Se llamará a la función si la solicitud tiene éxito
 				$(".outer_div").html(data).fadeIn('slow');
 				$("#loader").html("");
 			}
@@ -294,12 +294,12 @@ nuestros tabs en el modulo guia  -->
 		var parametros = {"action":"ajax","page":page,"id":id};
 		if(confirm('Esta acción  eliminará de forma permanente  \n\n ¿Desea continuar?')){
 		$.ajax({
-			url:'./ajax/banner_ajax.php',
-			data: parametros,
-			 beforeSend: function(objeto){
+			url:'./ajax/banner_ajax.php', // URL a la que se envía la solicitud
+			data: parametros, // Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
+			 beforeSend: function(objeto){ //metodo o funcion para gif animados con una imagen de precarga
 			$("#loader").html("<img src='../images/ajax-loader.gif'>");
 		  },
-			success:function(data){
+			success:function(data){ // Se llamará a la función si la solicitud tiene éxito
 				$(".outer_div").html(data).fadeIn('slow');
 				$("#loader").html("");
 			}

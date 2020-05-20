@@ -1,6 +1,6 @@
 ﻿<?php
 /*
-*Esta pagina es para editar los paquetes que ya estan creados 
+*Esta pagina es para editar los paquetes que ya estan creados
 */
 session_start();
 $title="Agregar paquete";
@@ -52,7 +52,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 
 
 		 <div class="col-md-7">
-		 <h3 ><span class="glyphicon glyphicon-edit"></span> Agregar paquete</h3>
+		 <h3 ><span class="glyphicon glyphicon-edit"></span> Editar paquete</h3>
      <form class="form-horizontal" id="editar_banner">
 
 
@@ -171,6 +171,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
  * @var data
  */
 			function upload_image(){
+        //permite aumentar los datos del formulario antes de enviarlos para incluir información adicional 
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
 				var inputFileImage = document.getElementById("fileToUpload");
@@ -186,10 +187,11 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
           contentType: false,       // El tipo de contenido utilizado al enviar datos al servidor.
           cache: false,             // Para no poder solicitar que las páginas se almacenen en caché
           processData:false,        // Para enviar DOMDocument o archivo de datos no procesados ​​se establece en falso
-          success: function(data)   // Se llamará a una función si la solicitud tiene éxito
+          success: function(data)   // Se llamará a la función si la solicitud tiene éxito
 					{
 						$(".upload-msg").html(data);
-						window.setTimeout(function() {
+						window.setTimeout(function() { //metodo que llama a una función o evalúa una expresión después de un número
+                             // específico de milisegundos
 						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
 						$(this).remove();
 						});	}, 5000);
@@ -205,12 +207,12 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
-							url:'ajax/upload2.php',
-							data: parametros,
-							 beforeSend: function(objeto){
+							url:'ajax/upload2.php', // URL a la que se envía la solicitud
+							data: parametros,// Datos enviados al servidor
+							 beforeSend: function(objeto){ //metodo o funcion para gif animados con una imagen de precarga
 							$(".upload-msg2").text('Cargando...');
 						  },
-							success:function(data){
+							success:function(data){ // Se llamará a la función si la solicitud tiene éxito
 								$(".upload-msg2").html(data);
 
 							}
@@ -231,17 +233,18 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
   $("#editar_banner").submit(function(e) {
 
 			  $.ajax({
-				  url: "ajax/editar_banner.php",
-				  type: "POST",
-				  data: $("#editar_banner").serialize(),
-				   beforeSend: function(objeto){
+				  url: "ajax/editar_banner.php",  // URL a la que se envía la solicitud
+				  type: "POST",  // Tipo de solicitud a enviar, llamada como método
+				  data: $("#editar_banner").serialize(), // Datos enviados al servidor, un conjunto de pares clave / valor
+           //(es decir, campos de formulario y valores)
+				   beforeSend: function(objeto){ //metodo o funcion para gif animados con una imagen de precarga
 					$("#loader").html("Cargando...");
 				  },
-				  success:function(data){
+				  success:function(data){  // Se llamará a una función si la solicitud tiene éxito
 						$(".outer_div").html(data).fadeIn('slow');
 						$("#loader").html("");
 					}
 			});
-			 e.preventDefault();
+			 e.preventDefault();//Metodo que detiene la acción predeterminada de un elemento seleccionado por parte de un usuario.
 		});
 	</script>

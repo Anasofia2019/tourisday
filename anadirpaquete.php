@@ -6,7 +6,7 @@ session_start();
 $title="Agregar paquete";
 /* Llamar la Cadena de Conexion*/
 include ("conexion.php");
-//Insert un nuevo producto
+//Insertar un nuevo producto
 $imagen_demo="demo.png";
 //para insertar imagenes
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
@@ -189,6 +189,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
  */
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
+        //permite aumentar los datos del formulario antes de enviarlos para incluir información adicional
 				var id_banner=$("#id_banner").val();
 				var inputFileImage = document.getElementById("fileToUpload");
 				var file = inputFileImage.files[0];
@@ -198,15 +199,16 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
         //direcciona a upload_banner para las imagenes si se permiten o no  por el tipo o el tamaño
         $.ajax({
           url: "ajax/upload_banner.php",        // URL a la que se envía la solicitud
-          type: "POST",             // Tipo de solicitud a enviar, llamada como método
-          data: data, 			  // Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
+          type: "POST",           // Tipo de solicitud a enviar, llamada como método
+          data: data, // Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
           contentType: false,       // El tipo de contenido utilizado al enviar datos al servidor.
           cache: false,             // Para no poder solicitar que las páginas se almacenen en caché
           processData:false,        // Para enviar DOMDocument o archivo de datos no procesados ​​se establece en falso
-          success: function(data)   // Se llamará a una función si la solicitud tiene éxito
+          success: function(data)   // Se llamará a la función si la solicitud tiene éxito
           {
 						$(".upload-msg").html(data);
-						window.setTimeout(function() {
+						window.setTimeout(function() {//metodo que llama a una función o evalúa una expresión después de un número
+                             // específico de milisegundos
 						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
 						$(this).remove();
 						});	}, 5000);
@@ -222,12 +224,12 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 			function eliminar(id){
 				var parametros = {"action":"delete","id":id};
 						$.ajax({
-							url:'ajax/upload2.php',
-							data: parametros,
-							 beforeSend: function(objeto){
+							url:'ajax/upload2.php',// URL a la que se envía la solicitud
+							data: parametros,// Datos enviados al servidor, un conjunto de pares clave / valor (es decir, campos de formulario y valores)
+							 beforeSend: function(objeto){//metodo o funcion para gif animados con una imagen de precarga
 							$(".upload-msg2").text('Cargando...');
 						  },
-							success:function(data){
+							success:function(data){  // Se llamará a la función si la solicitud tiene éxito
 								$(".upload-msg2").html(data);
 
 							}
