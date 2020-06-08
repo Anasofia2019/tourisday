@@ -3,10 +3,11 @@
 o no cuya imagen */
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUpload"]["type"])){
 /* Llamar la Cadena de Conexion*/
+
 include ("../../config/conexion.php");
 
 $id_producto=intval($_POST['id']);
-$target_dir = "../../images/productos/";
+$target_dir = "../../images/banner/";
 $carpeta=$target_dir.$id_producto."/";
 if (!file_exists($carpeta)) {
     mkdir($carpeta, 0777, true);

@@ -112,7 +112,7 @@ nuestros tabs en el modulo guia  -->
 				<h2 id="titulo_paquete">Mis paquetes</h2>
 
         <?php
-        
+
         //Esta consulta trae todos los paquetes que subió el guia que inició sesión
         $paquetes=mysqli_query($conexion,"SELECT * FROM tbl_paquetes WHERE cedula='$c_guia'");
 
