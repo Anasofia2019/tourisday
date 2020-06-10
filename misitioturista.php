@@ -1,19 +1,20 @@
 ﻿<?php
-  //Se incluye la coneccion
+  //Se incluye la conexión
 include 'conexion.php';
 
-  //iniciamos la seccion en la pagina
+  //iniciamos la sesión en la pagina
 session_start();
 
-  //usamos la variable superglobalr "$_SESSION" para saber si esta iniciada en el turista
+  /*usamos la variable superglobal "$_SESSION"
+  para saber si esta iniciada en el rol turista*/
 if (isset($_SESSION['turista'])) {
   //Si esta iniciada se procede a mostrar toda la pagina del guia
- 
+
 
   //La Variable super global tomó el valor de la cedula del turista, "$cedula" toma el valor de la variable super global para realizar consultas mas adelante
   $cedula=$_SESSION['turista'];
 
-  // Esta consulta es para traer todos los datos de un guia 
+  // Esta consulta es para traer todos los datos de un guia
   $consulta=mysqli_query($conexion,"SELECT * FROM tbl_turistas WHERE documento_turista='$cedula'");
 
   //$datos toma toda fila de datos del guia (Cedula, nombres, apellidos, residencia, entre otros)

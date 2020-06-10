@@ -2,13 +2,21 @@
  o misitioturista.php,
  se ejecutará la función
  que activa el color amarillo
-en el primer botón que se encuentra en la navbar,
+en el primer botón que se encuentra
+ en la navbar,
 el valor active equivale a el color amarillo
 definido en las hojas de estilo misitioguia.css y
 misitioturista.css
  */
  $(document).ready(function(){
 	$('ul.tabs li a:first').addClass('active');
+/*
+En este caso el efecto hide
+de jquery,esconde las
+etiquetas article, que
+sean diferentes
+
+*/
 $('.secciones article').hide();
 $('.secciones article:first').show();
 
@@ -57,8 +65,13 @@ etiqueta article*/
 });
 
 
-
-//aqui encontramos el codigo de nuestro dropdawn repartido en tres secciones
+/*
+El código incluido en el interior
+$( document ).ready()solo se ejecutará
+una vez que la página esté lista para
+que se ejecute el código JavaScript.
+https://learn.jquery.com/using-jquery-core/document-ready/
+*/
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
