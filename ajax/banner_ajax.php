@@ -74,7 +74,7 @@ if($action == 'ajax'){
 
 					  <div class="col-sm-6 col-md-3">
 						<div class="thumbnail">
-						  <img src="../../img/banner/<?php echo $url_image;?>" alt="...">
+						  <img src="../img/banner/<?php echo $url_image;?>" alt="...">
 						  <div class="caption">
 							<h3><?php echo $titulo;?></h3>
 
