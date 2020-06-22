@@ -1,7 +1,7 @@
 <?php
   //Se inicia una seccion para saber si alguno de los roles ha ingresado
 session_start();
-  
+
   //Usamos la variable superglobar "$_SESSION" para ver si esta variable esta iniciada en el guia
 if (isset($_SESSION['guia'])) {
   // Si la variable se inició en el guia, entonces se le redirecciona a su pagina
@@ -33,7 +33,7 @@ if (isset($_SESSION['guia'])) {
     <link rel="shortcut- icon" type="image/x-icon" href="./img/mapa.svg">
   </head>
 
- <body style="background:#a0c8f7;">
+ <body style="background:#ECF0F1;">
 <!-- Aqui encontramos nuestra navbar
  que va contener el logo y el dropdown  -->
 
