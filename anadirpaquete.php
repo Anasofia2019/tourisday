@@ -11,7 +11,7 @@ $imagen_demo="demo.png";
 //para insertar imagenes
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
 //consulta para que se muestre la tabla tbl_paquetes con limites
-$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc limit 0,1");
+$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc ");
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
 //consulta para que se muestre la tabla tbl_paquetes
@@ -68,6 +68,35 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 		 <div class="col-md-7">
 		 <h3 ><span class="glyphicon glyphicon-edit"></span> Agregar paquete</h3>
 			<form class="form-horizontal" id="editar_banner">
+
+        <!--- Esta parte es de la imagen del paquete--->
+        <div class="col-md-5">
+         <h3 ><span class="glyphicon glyphicon-picture"></span> Imagen</h3>
+
+         <form class="form-vertical">
+
+         <div class="form-group">
+
+            <div class="col-sm-12">
+
+
+             <div class="fileinput fileinput-new" data-provides="fileinput">
+               <div class="fileinput-new thumbnail" style="max-width: 100%;" >
+            <img class="img-rounded" src="../img/banner/<?php echo $url_image;?>" />
+          </div>
+          <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 250px;"></div>
+          <div>
+          <span class="btn btn-info btn-file"><span class="fileinput-new">Selecciona una imagen</span>
+          <span class="fileinput-exists" onclick="upload_image();">Cambiar imagen</span><input type="file" name="fileToUpload" id="fileToUpload" required onchange="upload_image();"></span>
+          <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Cancelar</a>
+          </div>
+              </div>
+              <div class="upload-msg"></div>
+
+            </div>
+
+            </div>
+
 
 
 <!--Este es el campo del titulo-->
@@ -132,35 +161,6 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 
 
 		</div>
-    <!--- Esta parte es de la imagen del paquete--->
-		<div class="col-md-5">
-		 <h3 ><span class="glyphicon glyphicon-picture"></span> Imagen</h3>
-
-		 <form class="form-vertical">
-
-		 <div class="form-group">
-
-				<div class="col-sm-12">
-
-
-				 <div class="fileinput fileinput-new" data-provides="fileinput">
-								  <div class="fileinput-new thumbnail" style="max-width: 100%;" >
-									  <img class="img-rounded" src="../img/banner/<?php echo $url_image;?>" />
-								  </div>
-								  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 250px;"></div>
-								  <div>
-									<span class="btn btn-info btn-file"><span class="fileinput-new">Selecciona una imagen</span>
-									<span class="fileinput-exists" onclick="upload_image();">Cambiar imagen</span><input type="file" name="fileToUpload" id="fileToUpload" required onchange="upload_image();"></span>
-									<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Cancelar</a>
-								  </div>
-					</div>
-					<div class="upload-msg"></div>
-
-				</div>
-
-			  </div>
-
-
 
 
 

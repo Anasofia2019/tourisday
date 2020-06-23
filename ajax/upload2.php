@@ -51,7 +51,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
        $messages[]= "El Archivo ha sido subido correctamente.";
 	   $ruta="images/productos/$id_producto/".$_FILES["fileToUpload"]["name"];
-	 $insert=mysqli_query($con,"insert into images (id_producto, url) values ('$id_producto','$ruta')");
+	 $insert=mysqli_query($con,"insert into tbl_paquetes (id_paquete, url) values ('$id_producto','$ruta')");
 
     } else {
        $errors[]= "Lo sentimos, hubo un error subiendo el archivo.";
@@ -102,11 +102,11 @@ $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['a
 if($action == 'delete'){
 	/* Llamar la Cadena de Conexion*/
 	include ("../../config/conexion.php");
-	$id_image=intval($_REQUEST['id']);
+	$id_image=intval($_REQUEST['id_paquete']);
 	$get_url=mysqli_query($con,"select * from tbl_paquetes where id_paquete='$id_image'");
 	$rw_url=mysqli_fetch_array($get_url);
 	$url_del=$rw_url['url'];
-	$id_producto=$rw_url['id_producto'];
+	$id_producto=$rw_url['id_paquete'];
 	//Borra el fichero
 	$delete='../../'.$url_del;
 	@unlink($delete);
