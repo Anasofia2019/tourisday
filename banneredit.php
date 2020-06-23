@@ -146,11 +146,12 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 
 
 
-
-
     </form>
 		</div>
     </div>
+    <center>
+    <a href="misitioguia.php" id="volver"><h2>volver</h2></a>
+    </center>
 	</div><!-- /container -->
 
     <!-- Bootstrap core JavaScript
@@ -171,7 +172,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
  * @var data
  */
 			function upload_image(){
-        //permite aumentar los datos del formulario antes de enviarlos para incluir información adicional 
+        //permite aumentar los datos del formulario antes de enviarlos para incluir información adicional
 				$(".upload-msg").text('Cargando...');
 				var id_banner=$("#id_banner").val();
 				var inputFileImage = document.getElementById("fileToUpload");
