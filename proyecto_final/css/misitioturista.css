@@ -123,7 +123,7 @@ ul.tabs{
 /* cada componente lista dropdown */
 ul.tabs li{
 	width: 20%;
-
+  
 }
 /* cada link de menu desplegable dropdown */
 ul.tabs li a{
@@ -240,7 +240,8 @@ recet */
   height: 500px;
   margin-top: 20px;
   margin-left: 25%;
-  
+  border-top: 10px solid var(--verde);
+  border-bottom: 10px solid var(--verde);
 
 }
 /* diseño de input y select del tab 4 cambiar información  */

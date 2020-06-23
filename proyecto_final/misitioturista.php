@@ -360,7 +360,7 @@ paquetes creados -->
         segundo_apellido:<input class="input" value="<?php echo $rows['apellido_turista_2']; ?>" name="ape_turista_2" type="text" placeholder="&#128100;  Segundo Apellido" required autofocus><br>
 
             fecha_nacimiento:<input class="input" value="<?php echo $rows['telefono_turista']; ?>" name="tel_turista" type="number" placeholder="&#128222;  Telefono" required>
-                 <label class="tm"> <h3 style="color:black">País de residencia</h3></label>
+                 <label class="tm"> <h3 style="color:white">País de residencia</h3></label>
                          <select class="input" name="pais_turista">
                            <option><?php echo $rows['nacionalidad_turista']; ?></option>
                            <option>Afganistán</option>

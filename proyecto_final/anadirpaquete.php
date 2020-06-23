@@ -115,7 +115,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 <!--Este es el campo de la cedula-->
 			  </div>
         <div class="form-group">
-       <label for="titulo" class="col-sm-3 control-label">Cedula guía</label>
+       <label for="titulo" class="col-sm-3 control-label">Cedula</label>
        <div class="col-sm-9">
 
 <input type="text" class="form-control" id="cedula" value="<?php echo $cedula;?>" required name="cedula">
