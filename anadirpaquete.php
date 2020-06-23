@@ -11,7 +11,7 @@ $imagen_demo="demo.png";
 //para insertar imagenes
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
 //consulta para que se muestre la tabla tbl_paquetes con limites
-$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc ");
+$sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc limit 0,1");
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
 //consulta para que se muestre la tabla tbl_paquetes
