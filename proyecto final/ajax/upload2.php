@@ -51,7 +51,7 @@ if ($uploadOk == 0) {
   //aca nos dice  que fue guardado de manera correcta la imagen, en la tabla tbl_paquetes
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
        $messages[]= "El Archivo ha sido subido correctamente.";
-	   $ruta="images/productos/$id_producto/".$_FILES["fileToUpload"]["name"];
+	   $ruta="images/banner/$id_producto/".$_FILES["fileToUpload"]["name"];
 	 $insert=mysqli_query($con,"insert into tbl_paquetes (id_paquete, url) values ('$id_producto','$ruta')");
 
     } else {

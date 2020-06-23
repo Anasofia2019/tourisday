@@ -12,21 +12,27 @@ $imagen_demo="demo.png";
 $insert=mysqli_query($conexion,"insert into tbl_paquetes (url_image, estado) values ('$imagen_demo','0')");
 //consulta para que se muestre la tabla tbl_paquetes con limites
 $sql_last=mysqli_query($conexion,"select LAST_INSERT_ID(id_paquete) as last from tbl_paquetes order by id_paquete desc limit 0,1");
+//este array sirve para filas recuperadas
 $rw=mysqli_fetch_array($sql_last);
 $id_banner=intval($rw['last']);
 //consulta para que se muestre la tabla tbl_paquetes
 $sql=mysqli_query($conexion,"select * from tbl_paquetes where id_paquete='$id_banner'");
+//La Variable super global tomó el valor de la cedula del guia, "$c_guia" toma el valor de la variable super global para realizar consultas mas adelante
   $c_guia= $_SESSION['guia'];
 //Consulta para que  se muestre en el campo de la cedula
 $consulta=mysqli_query($conexion,"SELECT cedula FROM tbl_guias WHERE cedula='$c_guia' ");
+//este array sirve para filas recuperadas
 $datos=mysqli_fetch_array($consulta);
+// este mysqli_num_rows es para averiguar cuántas filas fueron devueltas en la consulta $sql
 $count=mysqli_num_rows($sql);
-
+//este if es para que vaya aumentando
 if ($count==0){
 	//header("location: bannerlist.php");
 	//exit;
 }
+//este array sirve para filas recuperadas
 $rw=mysqli_fetch_array($sql);
+//las variables de los datos del formulario que utilizan el array que esta arriba
 $titulo=$rw['titulo'];
 $cedula=$datos['cedula'];
 $descripcion=$rw['descripcion'];
@@ -248,8 +254,6 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 /**
  * @param e
  */
-
-
   //funcion que envia a editar_banner para actualizar datos
 		$("#editar_banner").submit(function(e) {
 
