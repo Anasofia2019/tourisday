@@ -53,10 +53,11 @@ if ($uploadOk == 0) {
 	 $update=mysqli_query($conexion,"UPDATE tbl_paquetes SET url_image='$ruta' WHERE id_paquete='$id_banner'");
 
     } else {
+      //aca nos dice si tuvimos error para subir ese archivo
        $errors[]= "Lo sentimos, hubo un error subiendo el archivo.";
     }
 }
-
+//manda error si hubo error en el momento de subir el archivo
 if (isset($errors)){
 	?>
 	<div class="alert alert-danger alert-dismissible" role="alert">

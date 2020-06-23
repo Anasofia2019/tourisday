@@ -8,19 +8,22 @@ if($action == 'ajax'){
 	//Elimino producto
 	if (isset($_REQUEST['id'])){
 		$id_banner=intval($_REQUEST['id']);
+//este if sirve  para eliminar algun registro de la tabla tbl_paquetes con el id que se solicita
 		if ($delete=mysqli_query($conexion,"delete from tbl_paquetes where id_paquete='$id_banner'")){
+			//este es el mensaje que se muestra si la consulta fue exitosa
 			$message= "Datos eliminados satisfactoriamente";
 		} else {
+			//si hay algun error para eliminar el registro nos mostrara un mensaje que nos dira que no se puede hacer
 			$error= "No se pudo eliminar los datos";
 		}
 	}
 
-
+//nos esta haciendo referencia a que tabla esta llamando
 	$tables="tbl_paquetes";
 	$sWhere=" ";
 	$sWhere.=" ";
 
-
+//aca es para el orden de los id
 	$sWhere.=" order by id_paquete";
 	include 'pagination.php'; //incluir archivo de paginación
 	//variables de paginación
@@ -31,16 +34,18 @@ if($action == 'ajax'){
 
 	//Cuente el número total de filas en su tabla*/
 	$count_query   = mysqli_query($conexion,"SELECT count(*) AS numrows FROM $tables  $sWhere ");
+	//este if nos sirve para los registros que hay en orden en la tabla
 	if ($row= mysqli_fetch_array($count_query))
 	{
 	$numrows = $row['numrows'];
 	}
 	else {echo mysqli_error($conexion);}
+	//aca nos muestra el total de paginas que hay
 	$total_pages = ceil($numrows/$per_page);
 	$reload = './productslist.php';
 	//consulta principal para recuperar los datos
 	$query = mysqli_query($conexion,"SELECT * FROM  $tables  $sWhere LIMIT $offset,$per_page");
-
+//este nos muestra un aviso
 	if (isset($message)){
 		?>
 		<div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -50,6 +55,7 @@ if($action == 'ajax'){
 
 		<?php
 	}
+	//este if es por se presenta algun error
 	if (isset($error)){
 		?>
 		<div class="alert alert-danger alert-dismissible fade in" role="alert">

@@ -8,7 +8,7 @@ Aca se visualiza los paquetes que fueron creados desde la parte del turista
 //>>>>>>> 2fbd6426def8873f0f2f1ee9cf027c2880e4acea
 include("conexion.php");
 
-//Se inicia una seccion
+//Se inicia una sesión
 session_start();
 
 //Se valida si hay una seccion para el turista para mostrar los paquetes

@@ -25,10 +25,15 @@ function paginate($reload, $page, $tpages, $adjacents) {
 	}
 
 	// paginas
+	//Se valida
 	$pmin = ($page>$adjacents) ? ($page-$adjacents) : 1;
 	$pmax = ($page<($tpages-$adjacents)) ? ($page+$adjacents) : $tpages;
+	//Se muestra los números de paginas
 	for($i=$pmin; $i<=$pmax; $i++) {
+		//Se valida la paginacion total
+		//de registros
 		if($i==$page) {
+			//Validamos la pag activo
 			$out.= "<li class='active'><a>$i</a></li>";
 		}else if($i==1) {
 			$out.= "<li><a href='javascript:void(0);' onclick='load(1)'>$i</a></li>";
