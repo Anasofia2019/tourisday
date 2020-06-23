@@ -29,7 +29,7 @@ hace parte del mismo index -->
 
 </head>
 
-<body class="body1">
+<body>
 <!-- Aca podemos ver reflejada la información principal en un contenedor -->
 <div class="container">
   <!-- En este contenedor pondremos los textos
@@ -218,7 +218,7 @@ a la ves y sus contenedores-->
       <!-- Este div contiene los creditos de
       los desarroladores del sitio web -->
       <div class="credits">
-        DISEÑADO POR <a href="#">TOURIST DAY</a>
+        DERECHOS RESERVADOS <a href="#">TOURIST DAY</a>
       <br>
      </div>
 
