@@ -110,12 +110,12 @@ es decir un modulo del sitio-->
 
     <!-- Primera barra de porcentaje  -->
       <p class="w3-wide">turismo urbano</p>
-       <div class="w3-blue">
+       <div class="w3-yellow">
       <div class="w3-dark-grey" style="height:28px;width:95%"></div>
     </div>
     <!-- segunda barra de porcentaje  -->
     <p class="w3-wide">turismo rural</p>
-    <div class="w3-blue">
+    <div class="w3-yellow">
       <div class="w3-dark-grey" style="height:28px;width:85%"></div>
     </div>
 
@@ -124,7 +124,7 @@ es decir un modulo del sitio-->
   <!-- clase w3school para dar color -->
   <!-- se crea la clase que va acontener nuestra
   barra de informes  -->
-    <div class="w3-blue">
+    <div class="w3-yellow">
       <div class="w3-dark-grey" style="height:28px;width:80%"></div>
     </div><br>
 
@@ -205,7 +205,8 @@ y los segmentamos en bloque por items -->
       </article>
       <!-- Segundo articulo de contenido -->
 			<article id="tab2">
-				<h1 >Buscar paquetes</h1>
+        <img src="img/search.png" height="150px" width="200px" style="margin-top:20px;">
+				<h1 style="color:white;">Buscar paquetes</h1>
        <br><br><br><br>
     <!-- Aca se utilizo iframe para mostrar los paquetes -->
    <iframe src="mostrarpaquete.php" height="600" width="1189" id="mostar_paquetes" style="background:blue;" border></iframe>
@@ -216,7 +217,7 @@ y los segmentamos en bloque por items -->
       <!-- Tercer articulo con contenido -->
 			<article id="tab3">
         <!-- Texto principal -->
-			<h1> Mis sitios favoritos</h1><br><br><br>
+			<h1 style="color:white;"> Mis sitios favoritos</h1><br><br><br>
 
 <?php
 

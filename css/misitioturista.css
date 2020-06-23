@@ -123,6 +123,7 @@ ul.tabs{
 /* cada componente lista dropdown */
 ul.tabs li{
 	width: 20%;
+  
 }
 /* cada link de menu desplegable dropdown */
 ul.tabs li a{
@@ -233,7 +234,7 @@ recet */
 }
 /* hover botom submit tab 4 recet */
 .secciones #tab4 #cambiar_info2{
-  background: #489cd3 ;
+  background:#AED6F1;
   padding: 30px;
   width: 500px;
   height: 500px;
@@ -309,6 +310,9 @@ font-size:50px;
   width: 820px;
 
 }
+#foto_search{
+  margin-top: 400px;
+}
 /* titulo de tab favoritos */
 .secciones #tab3 h1{
 text-align: center;
@@ -335,7 +339,7 @@ margin-top:40px;
 
 @media screen and (max-width: 450px){
 	ul.tabs li a{
-		padding: 15px 0px;
+		padding: 1px 0px;
 	}
 
  /* posicisión de tabs */
