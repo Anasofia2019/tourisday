@@ -127,6 +127,8 @@ nuestros tabs en el modulo guia  -->
 			  </div>
 
 			</div>
+      <!-- aca utilizamos un gif para que cuando se recargue la pagina,-->
+      <!-- se hace con ayuda del archivo ajax banner_ajax-->
       <div id="loader" class="text-center"> <span><img src="./img/ajax-loader.gif"></span></div>
 		  <div class="outer_div"></div>
 
@@ -142,10 +144,10 @@ nuestros tabs en el modulo guia  -->
 
 <!-- Modal -->
 
-          <?php
-          $i=$i+1;
-        }
-         ?>
+<?php
+$i=$i+1;
+}
+?>
 
        </table>
 
