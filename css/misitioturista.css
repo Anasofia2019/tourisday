@@ -151,7 +151,7 @@ ul.tabs  li a .tab-text{
 /* secciones que contienen sub modulos */
 .secciones{
 	width: 120%;
-	background: #fff;
+	background: #61AAE2;
   margin-top:-50px;
   margin-left: -100px;
 
@@ -169,21 +169,21 @@ que tienen contenido */
 }
 /* tab de inicio turista */
 .secciones #tab1{
-  background: #f9f194;
+  background: #61AAE2;
 }
 /* segundo tab es decir paquetes  */
 .secciones #tab2{
-  background: #f9f194;
+  background: #61AAE2;
 
 }
 /* tab 3 de favoritos */
 .secciones #tab3{
-  background: #f9f194;
+  background: ;
 
 }
 /* tab 4 de cambiar información */
 .secciones #tab4{
-  background: #f9f194;
+  background: #61AAE2;
 
 
 }

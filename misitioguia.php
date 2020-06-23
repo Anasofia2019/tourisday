@@ -252,7 +252,7 @@ nuestros tabs en el modulo guia  -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <!-- link de  codigo bootstrap minimizado -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-</body>
+</body style="background:green;">
 <!-- hola -->
 </html>
 

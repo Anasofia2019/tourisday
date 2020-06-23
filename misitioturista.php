@@ -52,7 +52,7 @@ que nos da la interacción de efectos de la página  -->
 
 </head>
 
-<body style=" background:#a0c8f7 ;">
+<body style="background:#ECF0F1;">
   <!-- Este contenedor tendra los botones de
   nuestros tabs en el modulo turista  -->
   <div class="wrap">
@@ -105,13 +105,8 @@ es decir un modulo del sitio-->
     <img src="img/banner_turista.jpg" alt="" class="banner_turista" width="900px;" height="500px;" style="mar">
     <!-- Información del banner -->
     <hr style="width:200px;margin-top:-200px;" class="w3-opacity">
-    <p style="  background: linear-gradient(to bottom, #ffffff 27%, #6699ff 101%);padding:10px;margin-left:-20px;font-family:verdana;font-weight:400px;">
-
-      En touristday eres nuestra prioridad,podrás contar con nosotros y con nuestro equipo de trabajo, que te ayudará a resolver las
-      inquietudes que puedas tener como turista en la plataforma ya sea por las redes sociales que ofrece el sitio o por via telefonica,
-      es importante que sepas,que tu experiencia nos preocupa, por lo tanto, en caso de que ocurra algún percanse con un guía puedes informarlo
-      de inmediato con nosotros para tomar las medidas petinentes.
-    </p>
+    <br>
+    <br>
 
     <!-- Primera barra de porcentaje  -->
       <p class="w3-wide">turismo urbano</p>

@@ -30,7 +30,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 	<!--Tema opcional -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   </head>
-  <body style="background: linear-gradient(to bottom, #ffffff 27%, #ffff66 101%);">
+  <body style="background:;">
   	<div class='container'>
 		<div class="row">
 			<div class="col-lg-12">

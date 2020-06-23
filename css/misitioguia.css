@@ -168,7 +168,7 @@ ul.tabs  li a .tab-text{
   z-index: -1;
   position:absolute;
 	width: 130%;
-	background: #f9f194;
+	background:#61AAE2;
   margin-top:60px;
   margin-left: -100px;
 
@@ -223,7 +223,7 @@ tab de inicio */
  top:50px;
 
  font-family: verdana;
- color :#275A89;
+ color :white;
 }
 /* articulo dentro de
 todas las secciones */

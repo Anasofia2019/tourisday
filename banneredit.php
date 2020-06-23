@@ -42,8 +42,9 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
     <!-- Estilos personalizados para esta plantilla -->
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
 	<link href="css/preview-image.css" rel="stylesheet">
+ <link rel="stylesheet" href="css/baner_edit.css">
   </head>
-  <body>
+  <body >
 
 
     <div class="container">
@@ -150,7 +151,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 		</div>
     </div>
     <center>
-    <a href="misitioguia.php" id="volver"><h2>volver</h2></a>
+    <a href="misitioguia.php" class="volver"><h2>volver</h2></a>
     </center>
 	</div><!-- /container -->
 
