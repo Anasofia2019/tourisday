@@ -43,7 +43,7 @@ Las 3 metaetiquetas anteriores * deben * aparecer primero en la cabeza; cualquie
 
 					<div class="col-lg-3 col-md-4 col-xs-6 thumb">
 						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="<?php echo $rw_banner_top['titulo'];?>" data-caption="<?php echo $rw_banner_top['descripcion'];	?>" data-image="../../img/banner/<?php echo $rw_banner_top['url_image'];?>" data-target="#image-gallery">
-							<img class="img-responsive" src="img/banner/<?php echo $rw_banner_top['url_image'];?>" alt="Another alt text">
+							<img class="img-responsive" src="img/banner/<?php echo $rw_banner_top['url_image'];?>" alt="<?php echo $rw_banner_top['titulo']; ?>">
 						</a>
 						 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 						 	<input type="hidden" name="reserva" value="<?php echo $rw_banner_top['id_paquete'];  ?>">
