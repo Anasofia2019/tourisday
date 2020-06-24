@@ -17,7 +17,7 @@ if (isset($_SESSION['guia'])) {
 
   //Si no se cumple ninguna condicion de los roles, se muesta la pagina inical que se le mostaría a una persona que no ha iniciado seccion
 }else{
-//Hola 
+
   ?>
 
 <!DOCTYPE html>
